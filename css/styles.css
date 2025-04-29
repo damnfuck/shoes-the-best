@@ -1,0 +1,2569 @@
+  /* CSS Reset: Áp dụng cho tất cả phần tử */
+  * { /* Bắt đầu khối khai báo */
+    margin: 0; /* margin */
+    padding: 0; /* padding */
+    box-sizing: border-box; /* box-sizing */
+  } /* Kết thúc khối */
+
+  /* Định dạng cơ bản cho body */
+  body { /* Bắt đầu khối khai báo */
+    font-family: 'Roboto', sans-serif; /* font-family */
+    line-height: 1.6; /* line-height */
+    color: #333; /* color */
+  } /* Kết thúc khối */
+
+  /* Container: Vùng chứa chính */
+  .container { /* Bắt đầu khối khai báo */
+    max-width: 1200px; /* max-width */
+    margin: 0 auto; /* margin */
+    padding: 0 20px; /* padding */
+  } /* Kết thúc khối */
+
+  /* Navbar: Thanh điều hướng */
+  .navbar { /* Bắt đầu khối khai báo */
+    background-color: #e9780f; /* background-color */
+    position: fixed; /* position */
+    width: 100%; /* width */
+    top: 0; /* top */
+    z-index: 1000; /* z-index */
+  } /* Kết thúc khối */
+
+  .navbar .container { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    justify-content: space-between; /* justify-content */
+    align-items: center; /* align-items */
+    padding: 15px 20px; /* padding */
+  } /* Kết thúc khối */
+
+  .logo a { /* Bắt đầu khối khai báo */
+    font-family: 'Montserrat', sans-serif; /* font-family */
+    font-size: 1.8rem; /* font-size */
+    color: #ffffff; /* color */
+    text-decoration: none; /* text-decoration */
+  } /* Kết thúc khối */
+
+  .nav-menu { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    text-align-last: center; /* text-align-last */
+  } /* Kết thúc khối */
+
+  .nav-menu ul { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    list-style: none; /* list-style */
+    align-items: center; /* align-items */
+    margin-left: auto; /* margin-left */
+  } /* Kết thúc khối */
+
+  .nav-link { /* Bắt đầu khối khai báo */
+    margin-left: 20px; /* margin-left */
+  } /* Kết thúc khối */
+
+  .nav-link a { /* Bắt đầu khối khai báo */
+    color: #ffffff; /* color */
+    text-decoration: none; /* text-decoration */
+    font-size: 1rem; /* font-size */
+    transition: color 0.3s; /* transition */
+  } /* Kết thúc khối */
+
+  .nav-link a:hover,
+  .nav-link a.active { /* Bắt đầu khối khai báo */
+    color: #ff9f43; /* color */
+  } /* Kết thúc khối */
+
+  /* Style cho nút Đăng nhập và Đăng ký */
+  .auth-link a { /* Bắt đầu khối khai báo */
+    background-color: #ffffff; /* background-color */
+    color: #e9780f; /* color */
+    padding: 8px 15px; /* padding */
+    border-radius: 5px; /* border-radius */
+    font-weight: 500; /* font-weight */
+    transition: background-color 0.3s, color 0.3s; /* transition */
+  } /* Kết thúc khối */
+
+  .auth-link a:hover { /* Bắt đầu khối khai báo */
+    background-color: #ff9f43; /* background-color */
+    color: #ffffff; /* color */
+  } /* Kết thúc khối */
+
+  /* Responsive */
+  @media (max-width: 768px) { /* Bắt đầu khối khai báo */
+    .navbar .container { /* Bắt đầu khối khai báo */
+      flex-direction: column; /* flex-direction */
+      gap: 10px; /* gap */
+    } /* Kết thúc khối */
+
+    .nav-menu ul { /* Bắt đầu khối khai báo */
+      flex-direction: column; /* flex-direction */
+      align-items: center; /* align-items */
+      gap: 10px; /* gap */
+    } /* Kết thúc khối */
+
+    .nav-link, .auth-link { /* Bắt đầu khối khai báo */
+      margin-left: 0; /* margin-left */
+      margin-bottom: 10px; /* margin-bottom */
+    } /* Kết thúc khối */
+
+    .auth-link a { /* Bắt đầu khối khai báo */
+      padding: 6px 12px; /* Thu nhỏ nút trên mobile */
+    } /* Kết thúc khối */
+  } /* Kết thúc khối */
+
+  /* Các phần CSS khác của cậu (giữ nguyên, chỉ liệt kê tóm tắt) */
+  .hero { /* Bắt đầu khối khai báo */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero-bg.jpg'); /* background */
+    background-size: cover; /* background-size */
+    background-position: center; /* background-position */
+    height: 100vh; /* height */
+    display: flex; /* display */
+    align-items: center; /* align-items */
+    text-align: center; /* text-align */
+    color: #ffffff; /* color */
+    animation: fadeIn 1s ease-in; /* animation */
+  } /* Kết thúc khối */
+
+  
+/* Intro Section: Phần giới thiệu ngắn */
+.intro { /* Bắt đầu khối khai báo */
+    padding: 80px 20px; /* Khoảng đệm */
+    text-align: center; /* Căn giữa */
+} /* Kết thúc khối */
+
+/* Định nghĩa hoạt ảnh fadeIn */
+@keyframes fadeIn { /* Bắt đầu khối khai báo */
+    from { opacity: 0; } /* Bắt đầu khối khai báo */
+    to { opacity: 1; } /* Bắt đầu khối khai báo */
+} /* Kết thúc khối */
+
+/* Footer: Phần chân trang */
+.footer { /* Bắt đầu khối khai báo */
+    background-color: #e9780f; /* Màu cam hơi đậm */
+    color: #ffffff; /* Màu chữ trắng */
+    padding: 40px 20px; /* Khoảng đệm */
+} /* Kết thúc khối */
+
+.footer-grid { /* Bắt đầu khối khai báo */
+    display: grid; /* Sử dụng grid */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cột tự động */
+    gap: 20px; /* Khoảng cách giữa cột */
+    margin-bottom: 20px; /* Khoảng cách dưới */
+} /* Kết thúc khối */
+
+.footer-info h3,
+.footer-links h3,
+.footer-social h3 { /* Bắt đầu khối khai báo */
+    font-family: 'Montserrat', sans-serif; /* Font tiêu đề */
+    font-size: 1.5rem; /* Kích thước chữ */
+    margin-bottom: 15px; /* Khoảng cách dưới */
+    color: #e9780f; /* Màu cam hơi đậm */
+} /* Kết thúc khối */
+
+.footer-links ul { /* Bắt đầu khối khai báo */
+    list-style: none; /* Xóa dấu đầu dòng */
+} /* Kết thúc khối */
+
+.footer-links a { /* Bắt đầu khối khai báo */
+    color: #ffffff; /* Màu trắng */
+    text-decoration: none; /* Xóa gạch chân */
+    line-height: 2; /* Độ cao dòng */
+} /* Kết thúc khối */
+
+.footer-links a:hover { /* Bắt đầu khối khai báo */
+    color: #ff9f43; /* Màu cam nhạt khi hover */
+} /* Kết thúc khối */
+
+.footer-social a { /* Bắt đầu khối khai báo */
+    color: #ffffff; /* Màu trắng */
+    font-size: 1.5rem; /* Kích thước biểu tượng */
+    margin-right: 15px; /* Khoảng cách giữa biểu tượng */
+    transition: color 0.3s; /* Hiệu ứng hover */
+} /* Kết thúc khối */
+
+.footer-social a:hover { /* Bắt đầu khối khai báo */
+    color: #ff9f43; /* Màu cam nhạt khi hover */
+} /* Kết thúc khối */
+
+.footer-copy { /* Bắt đầu khối khai báo */
+    text-align: center; /* Căn giữa */
+    font-size: 0.9rem; /* Kích thước chữ */
+} /* Kết thúc khối */
+
+.back-to-top { /* Bắt đầu khối khai báo */
+    display: inline-block; /* Hiển thị như nút */
+    background-color: #e9780f; /* Màu cam hơi đậm */
+    color: #333; /* Màu chữ */
+    width: 40px; /* Chiều rộng */
+    height: 40px; /* Chiều cao */
+    border-radius: 50%; /* Hình tròn */
+    text-align: center; /* Căn giữa */
+    line-height: 40px; /* Căn giữa dọc */
+    text-decoration: none; /* Xóa gạch chân */
+    margin-top: 20px; /* Khoảng cách trên */
+} /* Kết thúc khối */
+
+.back-to-top:hover { /* Bắt đầu khối khai báo */
+    background-color: #cc6b0d; /* Màu cam đậm hơn khi hover */
+} /* Kết thúc khối */
+
+/* Testimonials Section: Phần đánh giá khách hàng */
+.testimonials { /* Bắt đầu khối khai báo */
+    padding: 80px 20px; /* Khoảng đệm */
+    text-align: center; /* Căn giữa */
+} /* Kết thúc khối */
+
+.testimonials h2 { /* Bắt đầu khối khai báo */
+    font-family: 'Montserrat', sans-serif; /* Font tiêu đề */
+    font-size: 2.5rem; /* Kích thước chữ */
+    margin-bottom: 40px; /* Khoảng cách dưới */
+    color: #e9780f; /* Màu cam hơi đậm */
+} /* Kết thúc khối */
+
+.testimonial-grid { /* Bắt đầu khối khai báo */
+    display: grid; /* Sử dụng grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cột tự động */
+    gap: 20px; /* Khoảng cách giữa mục */
+} /* Kết thúc khối */
+
+.testimonial-item { /* Bắt đầu khối khai báo */
+    background-color: #f9f9f9; /* Màu xám nhạt */
+    padding: 20px; /* Khoảng đệm */
+    border-radius: 10px; /* Bo góc */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+} /* Kết thúc khối */
+
+.testimonial-item p { /* Bắt đầu khối khai báo */
+    font-style: italic; /* Chữ nghiêng */
+    margin-bottom: 15px; /* Khoảng cách dưới */
+} /* Kết thúc khối */
+
+.testimonial-item h4 { /* Bắt đầu khối khai báo */
+    font-size: 1.2rem; /* Kích thước chữ */
+    color: hsl(0, 0%, 0%); /* Màu xanh lá sáng */
+} /* Kết thúc khối */
+
+.testimonial-item span { /* Bắt đầu khối khai báo */
+    font-size: 0.9rem; /* Kích thước chữ */
+    color: #666; /* Màu xám */
+} /* Kết thúc khối */
+
+/* About Section: Phần Giới Thiệu */
+.about { /* Bắt đầu khối khai báo */
+    padding: 120px 20px; /* Khoảng đệm */
+    background-color: #f8fafc; /* Màu nền xám xanh nhạt */
+    min-height: 100vh; /* Chiều cao tối thiểu */
+} /* Kết thúc khối */
+
+.about .container { /* Bắt đầu khối khai báo */
+    max-width: 1000px; /* Chiều rộng tối đa */
+} /* Kết thúc khối */
+
+.about h1 { /* Bắt đầu khối khai báo */
+    font-family: 'Montserrat', sans-serif; /* Font tiêu đề */
+    font-size: 3rem; /* Kích thước chữ */
+    color: #e9780f; /* Màu cam hơi đậm */
+    text-align: center; /* Căn giữa */
+    margin-bottom: 50px; /* Khoảng cách dưới */
+    animation: fadeIn 1s ease-in; /* Hoạt ảnh fadeIn */
+} /* Kết thúc khối */
+
+.about p { /* Bắt đầu khối khai báo */
+    margin-bottom: 100px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.mission,
+.vision,
+.values,
+.team { /* Bắt đầu khối khai báo */
+    margin-bottom: 40px; /* Khoảng cách dưới */
+    background-color: #ffffff; /* Màu trắng */
+    padding: 30px; /* Khoảng đệm */
+    border-radius: 12px; /* Bo góc */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng hover */
+} /* Kết thúc khối */
+
+.mission:hover,
+.vision:hover,
+.values:hover,
+.team:hover { /* Bắt đầu khối khai báo */
+    transform: translateY(-8px); /* Nâng lên khi hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Tăng đổ bóng */
+} /* Kết thúc khối */
+
+.mission h2,
+.vision h2,
+.values h2,
+.team h2 { /* Bắt đầu khối khai báo */
+    font-family: 'Montserrat', sans-serif; /* Font tiêu đề */
+    font-size: 2rem; /* Kích thước chữ */
+    color: #333; /* Màu xám đậm */
+    margin-bottom: 20px; /* Khoảng cách dưới */
+} /* Kết thúc khối */
+
+.mission p,
+.vision p { /* Bắt đầu khối khai báo */
+    font-size: 1.1rem; /* Kích thước chữ */
+    color: #555; /* Màu xám trung */
+    line-height: 1.8; /* Độ cao dòng */
+} /* Kết thúc khối */
+
+.values ul { /* Bắt đầu khối khai báo */
+    list-style: none; /* Xóa dấu đầu dòng */
+    padding-left: 0; /* Xóa khoảng cách trái */
+} /* Kết thúc khối */
+
+.values ul li { /* Bắt đầu khối khai báo */
+    font-size: 1.1rem; /* Kích thước chữ */
+    color: #555; /* Màu xám trung */
+    margin-bottom: 15px; /* Khoảng cách dưới */
+    position: relative; /* Để thêm biểu tượng */
+    padding-left: 30px; /* Chừa chỗ cho biểu tượng */
+} /* Kết thúc khối */
+
+.values ul li::before { /* Bắt đầu khối khai báo */
+    content: '\f058'; /* Biểu tượng check */
+    font-family: 'Font Awesome 6 Free'; /* Font Awesome */
+    font-weight: 900; /* Độ đậm */
+    color: #63b400; /* Màu xanh lá đậm */
+    position: absolute; /* Định vị biểu tượng */
+    left: 0; /* Bên trái */
+    top: 2px; /* Căn chỉnh dọc */
+} /* Kết thúc khối */
+
+.team { /* Bắt đầu khối khai báo */
+    text-align: center; /* Căn giữa */
+} /* Kết thúc khối */
+
+.team-member { /* Bắt đầu khối khai báo */
+    display: flex; /* Sử dụng flexbox */
+    flex-wrap: wrap; /* Cho phép xuống dòng */
+    justify-content: center; /* Căn giữa */
+    gap: 30px; /* Khoảng cách giữa thành viên */
+} /* Kết thúc khối */
+
+/* Service Section: Phần Dịch Vụ */
+.services-section { /* Bắt đầu khối khai báo */
+    padding: 100px 20px; /* padding */
+    background-color: #f8f8f8; /* background-color */
+    font-family: 'Segoe UI', sans-serif; /* font-family */
+} /* Kết thúc khối */
+.services-section h2 { /* Bắt đầu khối khai báo */
+    animation : fadeIn 1s ease-in; /* animation */
+} /* Kết thúc khối */
+
+.section-title { /* Bắt đầu khối khai báo */
+    font-family: 'Montserrat', sans-serif; /* font-family */
+    text-align: center; /* text-align */
+    font-size: 3rem; /* font-size */
+    font-weight: 600; /* font-weight */
+    margin-bottom: 30px; /* margin-bottom */
+    color: #e9780f; /* Màu cam hơi đậm */
+} /* Kết thúc khối */
+
+.section-intro { /* Bắt đầu khối khai báo */
+    text-align: center; /* text-align */
+    font-size: 16px; /* font-size */
+    margin-bottom: 40px; /* margin-bottom */
+    color: #070707; /* color */
+} /* Kết thúc khối */
+
+.services-grid { /* Bắt đầu khối khai báo */
+    display: grid; /* display */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* grid-template-columns */
+    gap: 30px; /* gap */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-card { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    flex-direction: column; /* flex-direction */
+    align-items: center; /* align-items */
+    background-color: white; /* background-color */
+    padding: 25px; /* padding */
+    border-radius: 12px; /* border-radius */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06); /* box-shadow */
+    transition: transform 0.3s ease; /* transition */
+} /* Kết thúc khối */
+
+.service-card img { /* Bắt đầu khối khai báo */
+    width: 100%; /* width */
+    height: 180px; /* height */
+    object-fit: cover; /* object-fit */
+    border-radius: 10px; /* border-radius */
+    margin-bottom: 15px; /* margin-bottom */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* box-shadow */
+} /* Kết thúc khối */
+
+.service-card:hover { /* Bắt đầu khối khai báo */
+    transform: translateY(-5px); /* transform */
+} /* Kết thúc khối */
+
+.service-card h3 { /* Bắt đầu khối khai báo */
+    font-size: 20px; /* font-size */
+    color: #000; /* color */
+    margin-bottom: 10px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-card p { /* Bắt đầu khối khai báo */
+    font-size: 15px; /* font-size */
+    color: #555; /* color */
+    line-height: 1.6; /* line-height */
+} /* Kết thúc khối */
+
+/* Liên kết trong thẻ dịch vụ */
+.service-card .card-link { /* Bắt đầu khối khai báo */
+    display: inline-block; /* Hiển thị như nút */
+    padding: 6px 12px; /* Giảm padding để nút nhỏ hơn */
+    background-color: #e17510; /* Màu xanh lá đậm */
+    color: white; /* Màu chữ trắng */
+    text-decoration: none; /* Xóa gạch chân */
+    border-radius: 5px; /* Bo góc */
+    transition: background-color 0.3s; /* Hiệu ứng hover */
+    font-size: 0.85rem; /* Kích thước chữ nhỏ hơn */
+} /* Kết thúc khối */
+
+.service-card .card-link:hover { /* Bắt đầu khối khai báo */
+    background-color: #de7c0b; /* Màu xanh lá đậm hơn khi hover */
+} /* Kết thúc khối */
+
+/* Form báo giá */
+.quote-form { /* Bắt đầu khối khai báo */
+    background-color: #ffffff; /* Màu nền trắng */
+    padding: 30px; /* Khoảng đệm */
+    border-radius: 12px; /* Bo góc */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    max-width: 1000px; /* Giới hạn chiều rộng */
+    margin: 0 auto; /* Căn giữa */
+} /* Kết thúc khối */
+
+/* Tiêu đề của form */
+.quote-form h3 { /* Bắt đầu khối khai báo */
+    font-family: 'Montserrat', sans-serif; /* Font Montserrat */
+    font-size: 1.8rem; /* Kích thước chữ */
+    color: #333; /* Màu xám đậm */
+    margin-bottom: 20px; /* Khoảng cách dưới */
+    text-align: center; /* Căn giữa */
+} /* Kết thúc khối */
+
+/* Nhãn của form */
+.quote-form label { /* Bắt đầu khối khai báo */
+    display: block; /* Hiển thị trên dòng riêng */
+    font-size: 1rem; /* Kích thước chữ */
+    color: #333; /* Màu xám đậm */
+    margin-bottom: 8px; /* Khoảng cách dưới */
+} /* Kết thúc khối */
+
+/* Trường nhập liệu của form */
+.quote-form input,
+.quote-form textarea { /* Bắt đầu khối khai báo */
+    width: 100%; /* Chiều rộng toàn bộ */
+    padding: 10px; /* Khoảng đệm */
+    border: 1px solid #ddd; /* Viền xám nhạt */
+    border-radius: 5px; /* Bo góc */
+    font-size: 1rem; /* Kích thước chữ */
+    margin-bottom: 15px; /* Khoảng cách dưới */
+    transition: border-color 0.3s; /* Hiệu ứng viền khi focus */
+} /* Kết thúc khối */
+
+/* Hiệu ứng focus cho trường nhập liệu */
+.quote-form input:focus,
+.quote-form textarea:focus { /* Bắt đầu khối khai báo */
+    border-color: #63b400; /* Viền xanh lá khi focus */
+    outline: none; /* Xóa viền mặc định của trình duyệt */
+} /* Kết thúc khối */
+
+/* Nút gửi của form */
+.quote-form .cta-button { /* Bắt đầu khối khai báo */
+    width: 100%; /* Chiều rộng toàn bộ */
+    padding: 12px; /* Khoảng đệm lớn hơn */
+    background-color: #ffd700; /* Màu vàng để khớp với thiết kế */
+    color: #333; /* Màu chữ */
+    border: none; /* Xóa viền */
+    border-radius: 5px; /* Bo góc */
+    cursor: pointer; /* Con trỏ chuột dạng nút */
+    font-size: 1rem; /* Kích thước chữ */
+    transition: background-color 0.3s; /* Hiệu ứng hover */
+} /* Kết thúc khối */
+
+.quote-form .cta-button:hover { /* Bắt đầu khối khai báo */
+    background-color: #e6c200; /* Màu vàng đậm hơn khi hover */
+} /* Kết thúc khối */
+
+/* Products Section */
+.products-section { /* Bắt đầu khối khai báo */
+    max-width: 1200px; /* max-width */
+    margin: 40px auto; /* margin */
+    padding: 0 20px; /* padding */
+} /* Kết thúc khối */
+
+.products-section h1 { /* Bắt đầu khối khai báo */
+    text-align: center; /* text-align */
+    font-size: 54px; /* font-size */
+    color: #da7809; /* color */
+    margin-bottom: 60px; /* margin-bottom */
+    margin-top: 80px; /* margin-top */
+    animation: fadeIn 1s ease-in; /* animation */
+    
+} /* Kết thúc khối */
+
+.products-grid { /* Bắt đầu khối khai báo */
+    display: grid; /* display */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* grid-template-columns */
+    gap: 20px; /* gap */
+} /* Kết thúc khối */
+
+.product-card { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    flex-direction: column; /* flex-direction */
+    align-items: center; /* align-items */
+    background-color: rgb(239, 238, 228); /* background-color */
+    padding: 25px; /* padding */
+    border-radius: 12px; /* border-radius */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06); /* box-shadow */
+    transition: transform 0.3s ease; /* transition */
+} /* Kết thúc khối */
+
+
+.product-card .card-link  { /* Bắt đầu khối khai báo */
+    border-radius: 10px; /* border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box-shadow */
+    overflow: hidden; /* overflow */
+    transition: transform 0.3s; /* transition */
+    display: inline-block; /* display */
+    padding: 6px 12px; /* Giảm padding để nút nhỏ hơn */
+    background-color: #e17510; /* background-color */
+    color: rgb(250, 248, 248); /* color */
+    text-decoration: none; /* text-decoration */
+} /* Kết thúc khối */
+
+.product-card:hover { /* Bắt đầu khối khai báo */
+    transform: translateY(-5px); /* transform */
+} /* Kết thúc khối */
+
+.product-card img { /* Bắt đầu khối khai báo */
+    width: 100%; /* width */
+    height: 200px; /* height */
+    object-fit: cover; /* object-fit */
+} /* Kết thúc khối */
+
+.product-card .content { /* Bắt đầu khối khai báo */
+    padding: 15px; /* padding */
+    text-align: center; /* text-align */
+} /* Kết thúc khối */
+
+.product-card h3 { /* Bắt đầu khối khai báo */
+    font-size: 20px; /* font-size */
+    color: #333; /* color */
+    margin-bottom: 10px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-card .price { /* Bắt đầu khối khai báo */
+    font-size: 18px; /* font-size */
+    color: #e9780f; /* color */
+    margin-bottom: 15px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-card .btn { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 10px 20px; /* padding */
+    background-color: #ff9f43; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    transition: background-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.product-card .btn:hover { /* Bắt đầu khối khai báo */
+    background-color: #e9780f; /* background-color */
+} /* Kết thúc khối */
+
+.footer { /* Bắt đầu khối khai báo */
+    background-color: #333; /* background-color */
+    color: #fff; /* color */
+    text-align: center; /* text-align */
+    padding: 20px 0; /* padding */
+    margin-top: 40px; /* margin-top */
+} /* Kết thúc khối */
+
+.footer p { /* Bắt đầu khối khai báo */
+    font-size: 14px; /* font-size */
+} /* Kết thúc khối */
+
+@media (max-width: 768px) { /* Bắt đầu khối khai báo */
+    .navbar .container { /* Bắt đầu khối khai báo */
+        flex-direction: column; /* flex-direction */
+        gap: 10px; /* gap */
+    } /* Kết thúc khối */
+
+    .navbar ul { /* Bắt đầu khối khai báo */
+        flex-direction: column; /* flex-direction */
+        align-items: center; /* align-items */
+        gap: 10px; /* gap */
+    } /* Kết thúc khối */
+
+    .products-grid { /* Bắt đầu khối khai báo */
+        grid-template-columns: 1fr; /* grid-template-columns */
+    } /* Kết thúc khối */
+} /* Kết thúc khối */
+
+/* Contact Section */
+.contact { /* Bắt đầu khối khai báo */
+    padding: 80px 20px; /* padding */
+    background-color: #fff; /* background-color */
+} /* Kết thúc khối */
+
+.contact h1 { /* Bắt đầu khối khai báo */
+    font-family: 'Montserrat', sans-serif; /* font-family */
+    font-size: 2.5rem; /* font-size */
+    text-align: center; /* text-align */
+    margin-bottom: 40px; /* margin-bottom */
+    color: #e9780f; /* Màu cam hơi đậm */
+} /* Kết thúc khối */
+
+.contact-grid { /* Bắt đầu khối khai báo */
+    display: grid; /* display */
+    grid-template-columns: 1fr 1fr; /* grid-template-columns */
+    gap: 40px; /* gap */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.contact-form form { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    flex-direction: column; /* flex-direction */
+} /* Kết thúc khối */
+
+.contact-form label { /* Bắt đầu khối khai báo */
+    font-family: 'Roboto', sans-serif; /* font-family */
+    margin-bottom: 8px; /* margin-bottom */
+    font-weight: bold; /* font-weight */
+    color: #333; /* color */
+} /* Kết thúc khối */
+
+.contact-form input,
+.contact-form textarea { /* Bắt đầu khối khai báo */
+    padding: 10px; /* padding */
+    margin-bottom: 20px; /* margin-bottom */
+    border: 1px solid #ccc; /* border */
+    border-radius: 5px; /* border-radius */
+    font-size: 1rem; /* font-size */
+    font-family: 'Roboto', sans-serif; /* font-family */
+    transition: border-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.contact-form input:focus,
+.contact-form textarea:focus { /* Bắt đầu khối khai báo */
+    border-color: #004aad; /* border-color */
+    outline: none; /* outline */
+} /* Kết thúc khối */
+
+.contact-form button { /* Bắt đầu khối khai báo */
+    align-self: flex-start; /* align-self */
+    background-color: #004aad; /* background-color */
+    color: white; /* color */
+    padding: 12px 24px; /* padding */
+    border: none; /* border */
+    border-radius: 5px; /* border-radius */
+    font-family: 'Roboto', sans-serif; /* font-family */
+    font-weight: bold; /* font-weight */
+    cursor: pointer; /* cursor */
+    transition: background-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.contact-form button:hover { /* Bắt đầu khối khai báo */
+    background-color: #00397a; /* background-color */
+} /* Kết thúc khối */
+
+.contact-info h3 { /* Bắt đầu khối khai báo */
+    font-family: 'Montserrat', sans-serif; /* font-family */
+    font-size: 1.8rem; /* font-size */
+    margin-bottom: 20px; /* margin-bottom */
+    color: #e9780f; /* Màu cam hơi đậm */
+} /* Kết thúc khối */
+
+.contact-info p { /* Bắt đầu khối khai báo */
+    margin-bottom: 10px; /* margin-bottom */
+    font-size: 1rem; /* font-size */
+    color: #666; /* color */
+} /* Kết thúc khối */
+
+.contact-info i { /* Bắt đầu khối khai báo */
+    margin-right: 10px; /* margin-right */
+    color: #004aad; /* color */
+} /* Kết thúc khối */
+
+.map { /* Bắt đầu khối khai báo */
+    border-radius: 10px; /* border-radius */
+    overflow: hidden; /* overflow */
+    width: 100%; /* width */
+    height: 300px; /* height */
+} /* Kết thúc khối */
+
+/* News Section */
+.news-section { /* Bắt đầu khối khai báo */
+    max-width: 1200px; /* max-width */
+    margin: 40px auto; /* margin */
+    padding: 0 20px; /* padding */
+  } /* Kết thúc khối */
+
+  .news-section h1 { /* Bắt đầu khối khai báo */
+    font-size: 48px; /* font-size */
+    color: #e9780f; /* color */
+    text-align: center; /* text-align */
+    margin-bottom: 30px; /* margin-bottom */
+    animation: fadeIn 1s ease-in; /* animation */
+    margin-top: 80px; /* margin-top */
+  } /* Kết thúc khối */
+
+  .news-grid { /* Bắt đầu khối khai báo */
+    display: grid; /* display */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* grid-template-columns */
+    gap: 20px; /* gap */
+  } /* Kết thúc khối */
+
+  .news-card { /* Bắt đầu khối khai báo */
+    background-color: #fff; /* background-color */
+    border-radius: 8px; /* border-radius */
+    overflow: hidden; /* overflow */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* box-shadow */
+    transition: transform 0.3s; /* transition */
+  } /* Kết thúc khối */
+
+  .news-card:hover { /* Bắt đầu khối khai báo */
+    transform: translateY(-5px); /* transform */
+  } /* Kết thúc khối */
+
+  .news-card img { /* Bắt đầu khối khai báo */
+    width: 100%; /* width */
+    height: 200px; /* height */
+    object-fit: cover; /* object-fit */
+  } /* Kết thúc khối */
+
+  .news-content { /* Bắt đầu khối khai báo */
+    padding: 20px; /* padding */
+  } /* Kết thúc khối */
+
+  .news-content h3 { /* Bắt đầu khối khai báo */
+    font-size: 20px; /* font-size */
+    color: #333; /* color */
+    margin-bottom: 10px; /* margin-bottom */
+  } /* Kết thúc khối */
+
+  .news-content p { /* Bắt đầu khối khai báo */
+    font-size: 14px; /* font-size */
+    color: #666; /* color */
+    line-height: 1.6; /* line-height */
+    margin-bottom: 15px; /* margin-bottom */
+  } /* Kết thúc khối */
+
+  .read-more { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 10px 20px; /* padding */
+    background-color: #e9780f; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 14px; /* font-size */
+    transition: background-color 0.3s; /* transition */
+  } /* Kết thúc khối */
+
+  .read-more:hover { /* Bắt đầu khối khai báo */
+    background-color: #ff9f43; /* background-color */
+  } /* Kết thúc khối */
+
+.share-buttons { /* Bắt đầu khối khai báo */
+    margin-top: 20px; /* margin-top */
+} /* Kết thúc khối */
+
+.share-buttons a { /* Bắt đầu khối khai báo */
+    color: #004aad; /* color */
+    font-size: 1.5rem; /* font-size */
+    margin-right: 15px; /* margin-right */
+    text-decoration: none; /* text-decoration */
+    transition: color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.share-buttons a:hover { /* Bắt đầu khối khai báo */
+    color: #ff9f43; /* Màu cam nhạt */
+} /* Kết thúc khối */
+
+/* Responsive */
+@media (max-width: 768px) { /* Bắt đầu khối khai báo */
+    .products h1,
+    .contact h1,
+    .news h1 { /* Bắt đầu khối khai báo */
+        font-size: 2rem; /* font-size */
+    } /* Kết thúc khối */
+
+    .contact-grid { /* Bắt đầu khối khai báo */
+        grid-template-columns: 1fr; /* grid-template-columns */
+    } /* Kết thúc khối */
+
+    .product-grid,
+    .news-grid { /* Bắt đầu khối khai báo */
+        grid-template-columns: 1fr; /* grid-template-columns */
+    } /* Kết thúc khối */
+
+    .product-filter { /* Bắt đầu khối khai báo */
+        flex-direction: column; /* flex-direction */
+        align-items: center; /* align-items */
+    } /* Kết thúc khối */
+
+    .filter-group { /* Bắt đầu khối khai báo */
+        width: 100%; /* width */
+        justify-content: center; /* justify-content */
+    } /* Kết thúc khối */
+
+    .contact-form button { /* Bắt đầu khối khai báo */
+        align-self: center; /* align-self */
+    } /* Kết thúc khối */
+
+    .map { /* Bắt đầu khối khai báo */
+        height: 250px; /* height */
+    } /* Kết thúc khối */
+} /* Kết thúc khối */
+
+@media (max-width: 480px) { /* Bắt đầu khối khai báo */
+    .products,
+    .contact,
+    .news { /* Bắt đầu khối khai báo */
+        padding: 40px 20px; /* padding */
+    } /* Kết thúc khối */
+
+    .products h1,
+    .contact h1,
+    .news h1 { /* Bắt đầu khối khai báo */
+        font-size: 1.8rem; /* font-size */
+    } /* Kết thúc khối */
+
+    .product-card h3,
+    .news-item h3 { /* Bắt đầu khối khai báo */
+        font-size: 1.3rem; /* font-size */
+    } /* Kết thúc khối */
+
+    .contact-info h3 { /* Bắt đầu khối khai báo */
+        font-size: 1.5rem; /* font-size */
+    } /* Kết thúc khối */
+
+    .news-detail h2 { /* Bắt đầu khối khai báo */
+        font-size: 1.8rem; /* font-size */
+    } /* Kết thúc khối */
+} /* Kết thúc khối */
+
+.contracts h1 { /* Bắt đầu khối khai báo */
+    font-family: 'Montserrat', sans-serif; /* Font Montserrat cho tiêu đề */
+    font-size: 3rem; /* Kích thước chữ lớn */
+    color: #63b400; /* Màu xanh lá đậm, đồng bộ với thiết kế */
+    text-align: center; /* Căn giữa */
+    margin-bottom: 50px; /* Khoảng cách dưới để tách biệt */
+    animation: fadeIn 1s ease-in; /* Hoạt ảnh fadeIn */
+} /* Kết thúc khối */
+
+.contracts-gird { /* Bắt đầu khối khai báo */
+    display: grid
+    ;
+        grid-template-columns: 1fr 1fr; /* grid-template-columns */
+        gap: 40px; /* gap */
+        margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.contracts-form form { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    margin-bottom: 40px; /* margin-bottom */
+    flex-direction: column; /* flex-direction */
+} /* Kết thúc khối */
+
+.service-content1 { /* Bắt đầu khối khai báo */
+    margin-top: 80px; /* margin-top */
+    padding: 20px; /* padding */
+    max-width: 1200px; /* max-width */
+    margin-left: auto; /* margin-left */
+    margin-right: auto; /* margin-right */
+} /* Kết thúc khối */
+
+.service-header1 { /* Bắt đầu khối khai báo */
+    text-align: center; /* text-align */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-header1 h1 { /* Bắt đầu khối khai báo */
+    font-size: 48px; /* font-size */
+    color: #e47317; /* color */
+    margin-bottom: 10px; /* margin-bottom */
+    animation: fadeIn 1s ease-in; /* animation */
+} /* Kết thúc khối */
+
+.service-header1 p { /* Bắt đầu khối khai báo */
+    font-size: 18px; /* font-size */
+    color: hsl(30, 100%, 1%); /* color */
+} /* Kết thúc khối */
+
+.service-details { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    flex-wrap: wrap; /* flex-wrap */
+    gap: 20px; /* gap */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-image { /* Bắt đầu khối khai báo */
+    flex: 2; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.service-image img { /* Bắt đầu khối khai báo */
+    width: 100%; /* width */
+    border-radius: 10px; /* border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box-shadow */
+} /* Kết thúc khối */
+
+.service-info { /* Bắt đầu khối khai báo */
+    flex: 2; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.service-info h2 { /* Bắt đầu khối khai báo */
+    font-size: 28px; /* font-size */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-info p { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    line-height: 1.6; /* line-height */
+    margin-bottom: 20px; /* margin-bottom */
+    color: #333; /* color */
+} /* Kết thúc khối */
+
+.service-info ul { /* Bắt đầu khối khai báo */
+    list-style: none; /* list-style */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-info ul li { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    margin-bottom: 10px; /* margin-bottom */
+    padding-left: 20px; /* padding-left */
+    position: relative; /* position */
+} /* Kết thúc khối */
+
+.service-info ul li::before { /* Bắt đầu khối khai báo */
+    content: "\f00c"; /* content */
+    font-family: "Font Awesome 5 Free"; /* font-family */
+    font-weight: 900; /* font-weight */
+    color: #ff9900; /* color */
+    position: absolute; /* position */
+    left: 0; /* left */
+    top: 2px; /* top */
+} /* Kết thúc khối */
+
+.cta-button { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+} /* Kết thúc khối */
+
+.cta-button:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.services-content2 { /* Bắt đầu khối khai báo */
+    margin-top: 80px; /* margin-top */
+    padding: 20px; /* padding */
+    max-width: 1200px; /* max-width */
+    margin-left: auto; /* margin-left */
+    margin-right: auto; /* margin-right */
+} /* Kết thúc khối */
+
+.service-header2  { /* Bắt đầu khối khai báo */
+    text-align: center; /* text-align */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-header2 h1 { /* Bắt đầu khối khai báo */
+    font-size: 48px; /* font-size */
+    color: #da6618; /* color */
+    margin-bottom: 10px; /* margin-bottom */
+    animation: fadeIn 1s ease-in; /* animation */
+} /* Kết thúc khối */
+
+.service-header p { /* Bắt đầu khối khai báo */
+    font-size: 18px; /* font-size */
+    color: #666; /* color */
+} /* Kết thúc khối */
+
+.service-details { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    flex-wrap: wrap; /* flex-wrap */
+    gap: 20px; /* gap */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-image { /* Bắt đầu khối khai báo */
+    flex: 1; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.service-image img { /* Bắt đầu khối khai báo */
+    width: 100%; /* width */
+    border-radius: 10px; /* border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box-shadow */
+} /* Kết thúc khối */
+
+.service-info { /* Bắt đầu khối khai báo */
+    flex: 2; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.service-info h2 { /* Bắt đầu khối khai báo */
+    font-size: 28px; /* font-size */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-info p { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    line-height: 1.6; /* line-height */
+    margin-bottom: 20px; /* margin-bottom */
+    color: #333; /* color */
+} /* Kết thúc khối */
+
+.service-info ul { /* Bắt đầu khối khai báo */
+    list-style: none; /* list-style */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-info ul li { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    margin-bottom: 10px; /* margin-bottom */
+    padding-left: 20px; /* padding-left */
+    position: relative; /* position */
+} /* Kết thúc khối */
+
+.service-info ul li::before { /* Bắt đầu khối khai báo */
+    content: "\f00c"; /* content */
+    font-family: "Font Awesome 5 Free"; /* font-family */
+    font-weight: 900; /* font-weight */
+    color: #ff9900; /* color */
+    position: absolute; /* position */
+    left: 0; /* left */
+    top: 2px; /* top */
+} /* Kết thúc khối */
+
+.cta-button { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+} /* Kết thúc khối */
+
+.cta-button:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.service-content3 { /* Bắt đầu khối khai báo */
+    margin-top: 80px; /* margin-top */
+    padding: 20px; /* padding */
+    max-width: 1200px; /* max-width */
+    margin-left: auto; /* margin-left */
+    margin-right: auto; /* margin-right */
+} /* Kết thúc khối */
+
+.service-header3 { /* Bắt đầu khối khai báo */
+    text-align: center; /* text-align */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-header3 h1 { /* Bắt đầu khối khai báo */
+    font-size: 36px; /* font-size */
+    color: #e1741b; /* color */
+    margin-bottom: 10px; /* margin-bottom */
+    animation: fadeIn 1s ease-in; /* animation */
+} /* Kết thúc khối */
+
+.service-header p { /* Bắt đầu khối khai báo */
+    font-size: 18px; /* font-size */
+    color: #666; /* color */
+} /* Kết thúc khối */
+
+.service-details { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    flex-wrap: wrap; /* flex-wrap */
+    gap: 20px; /* gap */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-image { /* Bắt đầu khối khai báo */
+    flex: 1; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.service-image img { /* Bắt đầu khối khai báo */
+    width: 100%; /* width */
+    border-radius: 10px; /* border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box-shadow */
+} /* Kết thúc khối */
+
+.service-info { /* Bắt đầu khối khai báo */
+    flex: 2; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.service-info h2 { /* Bắt đầu khối khai báo */
+    font-size: 28px; /* font-size */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-info p { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    line-height: 1.6; /* line-height */
+    margin-bottom: 20px; /* margin-bottom */
+    color: #333; /* color */
+} /* Kết thúc khối */
+
+.service-info ul { /* Bắt đầu khối khai báo */
+    list-style: none; /* list-style */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-info ul li { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    margin-bottom: 10px; /* margin-bottom */
+    padding-left: 20px; /* padding-left */
+    position: relative; /* position */
+} /* Kết thúc khối */
+
+.service-info ul li::before { /* Bắt đầu khối khai báo */
+    content: "\f00c"; /* content */
+    font-family: "Font Awesome 5 Free"; /* font-family */
+    font-weight: 900; /* font-weight */
+    color: #ff9900; /* color */
+    position: absolute; /* position */
+    left: 0; /* left */
+    top: 2px; /* top */
+} /* Kết thúc khối */
+
+.cta-button { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+} /* Kết thúc khối */
+
+.cta-button:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+
+.service-content4 { /* Bắt đầu khối khai báo */
+    margin-top: 80px; /* margin-top */
+    padding: 20px; /* padding */
+    max-width: 1200px; /* max-width */
+    margin-left: auto; /* margin-left */
+    margin-right: auto; /* margin-right */
+} /* Kết thúc khối */
+
+.service-header4 { /* Bắt đầu khối khai báo */
+    text-align: center; /* text-align */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-header4 h1 { /* Bắt đầu khối khai báo */
+    font-size: 36px; /* font-size */
+    color: #e57519; /* color */
+    margin-bottom: 10px; /* margin-bottom */
+    animation: fadeIn 1s ease-in; /* animation */
+} /* Kết thúc khối */
+
+.service-header p { /* Bắt đầu khối khai báo */
+    font-size: 18px; /* font-size */
+    color: #666; /* color */
+} /* Kết thúc khối */
+
+.service-details { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    flex-wrap: wrap; /* flex-wrap */
+    gap: 20px; /* gap */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-image { /* Bắt đầu khối khai báo */
+    flex: 1; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.service-image img { /* Bắt đầu khối khai báo */
+    width: 100%; /* width */
+    border-radius: 10px; /* border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box-shadow */
+} /* Kết thúc khối */
+
+.service-info { /* Bắt đầu khối khai báo */
+    flex: 2; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.service-info h2 { /* Bắt đầu khối khai báo */
+    font-size: 28px; /* font-size */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-info p { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    line-height: 1.6; /* line-height */
+    margin-bottom: 20px; /* margin-bottom */
+    color: #333; /* color */
+} /* Kết thúc khối */
+
+.service-info ul { /* Bắt đầu khối khai báo */
+    list-style: none; /* list-style */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-info ul li { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    margin-bottom: 10px; /* margin-bottom */
+    padding-left: 20px; /* padding-left */
+    position: relative; /* position */
+} /* Kết thúc khối */
+
+.service-info ul li::before { /* Bắt đầu khối khai báo */
+    content: "\f00c"; /* content */
+    font-family: "Font Awesome 5 Free"; /* font-family */
+    font-weight: 900; /* font-weight */
+    color: #ff9900; /* color */
+    position: absolute; /* position */
+    left: 0; /* left */
+    top: 2px; /* top */
+} /* Kết thúc khối */
+
+.cta-button { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+} /* Kết thúc khối */
+
+.cta-button:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.service-content5 { /* Bắt đầu khối khai báo */
+    margin-top: 80px; /* margin-top */
+    padding: 20px; /* padding */
+    max-width: 1200px; /* max-width */
+    margin-left: auto; /* margin-left */
+    margin-right: auto; /* margin-right */
+} /* Kết thúc khối */
+
+.service-header5  { /* Bắt đầu khối khai báo */
+    text-align: center; /* text-align */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-header5  h1 { /* Bắt đầu khối khai báo */
+    font-size: 36px; /* font-size */
+    color: #e77315; /* color */
+    margin-bottom: 10px; /* margin-bottom */
+    animation: fadeIn 1s ease-in; /* animation */
+} /* Kết thúc khối */
+
+.service-header p { /* Bắt đầu khối khai báo */
+    font-size: 18px; /* font-size */
+    color: #666; /* color */
+} /* Kết thúc khối */
+
+.service-details { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    flex-wrap: wrap; /* flex-wrap */
+    gap: 20px; /* gap */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-image { /* Bắt đầu khối khai báo */
+    flex: 1; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.service-image img { /* Bắt đầu khối khai báo */
+    width: 100%; /* width */
+    border-radius: 10px; /* border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box-shadow */
+} /* Kết thúc khối */
+
+.service-info { /* Bắt đầu khối khai báo */
+    flex: 2; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.service-info h2 { /* Bắt đầu khối khai báo */
+    font-size: 28px; /* font-size */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-info p { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    line-height: 1.6; /* line-height */
+    margin-bottom: 20px; /* margin-bottom */
+    color: #333; /* color */
+} /* Kết thúc khối */
+
+.service-info ul { /* Bắt đầu khối khai báo */
+    list-style: none; /* list-style */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-info ul li { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    margin-bottom: 10px; /* margin-bottom */
+    padding-left: 20px; /* padding-left */
+    position: relative; /* position */
+} /* Kết thúc khối */
+
+.service-info ul li::before { /* Bắt đầu khối khai báo */
+    content: "\f00c"; /* content */
+    font-family: "Font Awesome 5 Free"; /* font-family */
+    font-weight: 900; /* font-weight */
+    color: #ff9900; /* color */
+    position: absolute; /* position */
+    left: 0; /* left */
+    top: 2px; /* top */
+} /* Kết thúc khối */
+
+.cta-button { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+} /* Kết thúc khối */
+
+.cta-button:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+
+.service-content6 { /* Bắt đầu khối khai báo */
+    margin-top: 80px; /* margin-top */
+    padding: 20px; /* padding */
+    max-width: 1200px; /* max-width */
+    margin-left: auto; /* margin-left */
+    margin-right: auto; /* margin-right */
+} /* Kết thúc khối */
+
+.service-header6  { /* Bắt đầu khối khai báo */
+    text-align: center; /* text-align */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-header6  h1 { /* Bắt đầu khối khai báo */
+    font-size: 36px; /* font-size */
+    color: #d56b1f; /* color */
+    margin-bottom: 10px; /* margin-bottom */
+    animation: fadeIn 1s ease-in; /* animation */
+} /* Kết thúc khối */
+
+.service-header p { /* Bắt đầu khối khai báo */
+    font-size: 18px; /* font-size */
+    color: #666; /* color */
+} /* Kết thúc khối */
+
+.service-details { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    flex-wrap: wrap; /* flex-wrap */
+    gap: 20px; /* gap */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-image { /* Bắt đầu khối khai báo */
+    flex: 1; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.service-image img { /* Bắt đầu khối khai báo */
+    width: 100%; /* width */
+    border-radius: 10px; /* border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box-shadow */
+} /* Kết thúc khối */
+
+.service-info { /* Bắt đầu khối khai báo */
+    flex: 2; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.service-info h2 { /* Bắt đầu khối khai báo */
+    font-size: 28px; /* font-size */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-info p { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    line-height: 1.6; /* line-height */
+    margin-bottom: 20px; /* margin-bottom */
+    color: #333; /* color */
+} /* Kết thúc khối */
+
+.service-info ul { /* Bắt đầu khối khai báo */
+    list-style: none; /* list-style */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.service-info ul li { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    margin-bottom: 10px; /* margin-bottom */
+    padding-left: 20px; /* padding-left */
+    position: relative; /* position */
+} /* Kết thúc khối */
+
+.service-info ul li::before { /* Bắt đầu khối khai báo */
+    content: "\f00c"; /* content */
+    font-family: "Font Awesome 5 Free"; /* font-family */
+    font-weight: 900; /* font-weight */
+    color: #ff9900; /* color */
+    position: absolute; /* position */
+    left: 0; /* left */
+    top: 2px; /* top */
+} /* Kết thúc khối */
+
+.cta-button { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+} /* Kết thúc khối */
+
+.cta-button:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.product-content1 { /* Bắt đầu khối khai báo */
+    margin-top: 80px; /* margin-top */
+    padding: 20px; /* padding */
+    max-width: 1200px; /* max-width */
+    margin-left: auto; /* margin-left */
+    margin-right: auto; /* margin-right */
+} /* Kết thúc khối */
+
+.product-header1 { /* Bắt đầu khối khai báo */
+    text-align: center; /* text-align */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-header1 h1 { /* Bắt đầu khối khai báo */
+    font-size: 36px; /* font-size */
+    color: #e07b10; /* color */
+    margin-bottom: 10px; /* margin-bottom */
+    animation: fadeIn 1s ease-in; /* animation */
+} /* Kết thúc khối */
+
+.product-header1 p { /* Bắt đầu khối khai báo */
+    font-size: 18px; /* font-size */
+    color: #666; /* color */
+} /* Kết thúc khối */
+
+.product-details { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    flex-wrap: wrap; /* flex-wrap */
+    gap: 20px; /* gap */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-image { /* Bắt đầu khối khai báo */
+    flex: 1; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.product-image img { /* Bắt đầu khối khai báo */
+    width: 100%; /* width */
+    border-radius: 10px; /* border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box-shadow */
+} /* Kết thúc khối */
+
+.product-info { /* Bắt đầu khối khai báo */
+    flex: 2; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.product-info h2 { /* Bắt đầu khối khai báo */
+    font-size: 28px; /* font-size */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-info p { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    line-height: 1.6; /* line-height */
+    margin-bottom: 20px; /* margin-bottom */
+    color: #333; /* color */
+} /* Kết thúc khối */
+
+.product-info ul { /* Bắt đầu khối khai báo */
+    list-style: none; /* list-style */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-info ul li { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    margin-bottom: 10px; /* margin-bottom */
+    padding-left: 20px; /* padding-left */
+    position: relative; /* position */
+} /* Kết thúc khối */
+
+.product-info ul li::before { /* Bắt đầu khối khai báo */
+    content: "\f00c"; /* content */
+    font-family: "Font Awesome 5 Free"; /* font-family */
+    font-weight: 900; /* font-weight */
+    color: #ff9900; /* color */
+    position: absolute; /* position */
+    left: 0; /* left */
+    top: 2px; /* top */
+} /* Kết thúc khối */
+
+.product-price { /* Bắt đầu khối khai báo */
+    font-size: 24px; /* font-size */
+    font-weight: bold; /* font-weight */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.button-group { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    gap: 10px; /* gap */
+    flex-wrap: wrap; /* flex-wrap */
+} /* Kết thúc khối */
+
+.cta-button { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+    text-align: center; /* text-align */
+} /* Kết thúc khối */
+
+.cta-button:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.cta-button:active { /* Bắt đầu khối khai báo */
+    transform: scale(0.95); /* transform */
+} /* Kết thúc khối */
+
+.add-to-cart { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+    text-align: center; /* text-align */
+    cursor: pointer; /* cursor */
+    transition: transform 0.1s, background-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.add-to-cart:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.add-to-cart:active { /* Bắt đầu khối khai báo */
+    transform: scale(0.95); /* transform */
+} /* Kết thúc khối */
+
+.product-content2 { /* Bắt đầu khối khai báo */
+    margin-top: 80px; /* margin-top */
+    padding: 20px; /* padding */
+    max-width: 1200px; /* max-width */
+    margin-left: auto; /* margin-left */
+    margin-right: auto; /* margin-right */
+} /* Kết thúc khối */
+
+.product-header2 { /* Bắt đầu khối khai báo */
+    text-align: center; /* text-align */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-header2 h1 { /* Bắt đầu khối khai báo */
+    font-size: 36px; /* font-size */
+    color: #d9711c; /* color */
+    margin-bottom: 10px; /* margin-bottom */
+    animation: fadeIn 1s ease-in; /* animation */
+} /* Kết thúc khối */
+
+.product-header p { /* Bắt đầu khối khai báo */
+    font-size: 18px; /* font-size */
+    color: #666; /* color */
+} /* Kết thúc khối */
+
+.product-details { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    flex-wrap: wrap; /* flex-wrap */
+    gap: 20px; /* gap */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-image { /* Bắt đầu khối khai báo */
+    flex: 1; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.product-image img { /* Bắt đầu khối khai báo */
+    width: 100%; /* width */
+    border-radius: 10px; /* border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box-shadow */
+} /* Kết thúc khối */
+
+.product-info { /* Bắt đầu khối khai báo */
+    flex: 2; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.product-info h2 { /* Bắt đầu khối khai báo */
+    font-size: 28px; /* font-size */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-info p { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    line-height: 1.6; /* line-height */
+    margin-bottom: 20px; /* margin-bottom */
+    color: #333; /* color */
+} /* Kết thúc khối */
+
+.product-info ul { /* Bắt đầu khối khai báo */
+    list-style: none; /* list-style */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-info ul li { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    margin-bottom: 10px; /* margin-bottom */
+    padding-left: 20px; /* padding-left */
+    position: relative; /* position */
+} /* Kết thúc khối */
+
+.product-info ul li::before { /* Bắt đầu khối khai báo */
+    content: "\f00c"; /* content */
+    font-family: "Font Awesome 5 Free"; /* font-family */
+    font-weight: 900; /* font-weight */
+    color: #ff9900; /* color */
+    position: absolute; /* position */
+    left: 0; /* left */
+    top: 2px; /* top */
+} /* Kết thúc khối */
+
+.product-price { /* Bắt đầu khối khai báo */
+    font-size: 24px; /* font-size */
+    font-weight: bold; /* font-weight */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.button-group { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    gap: 10px; /* gap */
+    flex-wrap: wrap; /* flex-wrap */
+} /* Kết thúc khối */
+
+.cta-button { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+    text-align: center; /* text-align */
+    cursor: pointer; /* cursor */
+    transition: transform 0.1s, background-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.cta-button:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.cta-button:active { /* Bắt đầu khối khai báo */
+    transform: scale(0.95); /* transform */
+} /* Kết thúc khối */
+
+.add-to-cart { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+    text-align: center; /* text-align */
+    cursor: pointer; /* cursor */
+    transition: transform 0.1s, background-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.add-to-cart:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.add-to-cart:active { /* Bắt đầu khối khai báo */
+    transform: scale(0.95); /* transform */
+} /* Kết thúc khối */
+
+
+.product-content3 { /* Bắt đầu khối khai báo */
+    margin-top: 80px; /* margin-top */
+    padding: 20px; /* padding */
+    max-width: 1200px; /* max-width */
+    margin-left: auto; /* margin-left */
+    margin-right: auto; /* margin-right */
+} /* Kết thúc khối */
+
+.product-header3 { /* Bắt đầu khối khai báo */
+    text-align: center; /* text-align */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-header3 h1 { /* Bắt đầu khối khai báo */
+    font-size: 36px; /* font-size */
+    color: #d2731a; /* color */
+    margin-bottom: 10px; /* margin-bottom */
+    animation: fadeIn 1s ease-in; /* animation */
+} /* Kết thúc khối */
+
+.product-header p { /* Bắt đầu khối khai báo */
+    font-size: 18px; /* font-size */
+    color: #666; /* color */
+} /* Kết thúc khối */
+
+.product-details { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    flex-wrap: wrap; /* flex-wrap */
+    gap: 20px; /* gap */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-image { /* Bắt đầu khối khai báo */
+    flex: 1; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.product-image img { /* Bắt đầu khối khai báo */
+    width: 100%; /* width */
+    border-radius: 10px; /* border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box-shadow */
+} /* Kết thúc khối */
+
+.product-info { /* Bắt đầu khối khai báo */
+    flex: 2; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.product-info h2 { /* Bắt đầu khối khai báo */
+    font-size: 28px; /* font-size */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-info p { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    line-height: 1.6; /* line-height */
+    margin-bottom: 20px; /* margin-bottom */
+    color: #333; /* color */
+} /* Kết thúc khối */
+
+.product-info ul { /* Bắt đầu khối khai báo */
+    list-style: none; /* list-style */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-info ul li { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    margin-bottom: 10px; /* margin-bottom */
+    padding-left: 20px; /* padding-left */
+    position: relative; /* position */
+} /* Kết thúc khối */
+
+.product-info ul li::before { /* Bắt đầu khối khai báo */
+    content: "\f00c"; /* content */
+    font-family: "Font Awesome 5 Free"; /* font-family */
+    font-weight: 900; /* font-weight */
+    color: #ff9900; /* color */
+    position: absolute; /* position */
+    left: 0; /* left */
+    top: 2px; /* top */
+} /* Kết thúc khối */
+
+.product-price { /* Bắt đầu khối khai báo */
+    font-size: 24px; /* font-size */
+    font-weight: bold; /* font-weight */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.button-group { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    gap: 10px; /* gap */
+    flex-wrap: wrap; /* flex-wrap */
+} /* Kết thúc khối */
+
+.cta-button { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+    text-align: center; /* text-align */
+    cursor: pointer; /* cursor */
+    transition: transform 0.1s, background-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.cta-button:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.cta-button:active { /* Bắt đầu khối khai báo */
+    transform: scale(0.95); /* transform */
+} /* Kết thúc khối */
+
+.add-to-cart { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+    text-align: center; /* text-align */
+    cursor: pointer; /* cursor */
+    transition: transform 0.1s, background-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.add-to-cart:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.add-to-cart:active { /* Bắt đầu khối khai báo */
+    transform: scale(0.95); /* transform */
+} /* Kết thúc khối */
+
+.product-content4 { /* Bắt đầu khối khai báo */
+    margin-top: 80px; /* margin-top */
+    padding: 20px; /* padding */
+    max-width: 1200px; /* max-width */
+    margin-left: auto; /* margin-left */
+    margin-right: auto; /* margin-right */
+} /* Kết thúc khối */
+
+.product-header4 { /* Bắt đầu khối khai báo */
+    text-align: center; /* text-align */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-header4 h1 { /* Bắt đầu khối khai báo */
+    font-size: 36px; /* font-size */
+    color: #de7716; /* color */
+    margin-bottom: 10px; /* margin-bottom */
+    animation: fadeIn 1s ease-in; /* animation */
+} /* Kết thúc khối */
+
+.product-header p { /* Bắt đầu khối khai báo */
+    font-size: 18px; /* font-size */
+    color: #666; /* color */
+} /* Kết thúc khối */
+
+.product-details { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    flex-wrap: wrap; /* flex-wrap */
+    gap: 20px; /* gap */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-image { /* Bắt đầu khối khai báo */
+    flex: 1; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.product-image img { /* Bắt đầu khối khai báo */
+    width: 100%; /* width */
+    border-radius: 10px; /* border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box-shadow */
+} /* Kết thúc khối */
+
+.product-info { /* Bắt đầu khối khai báo */
+    flex: 2; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.product-info h2 { /* Bắt đầu khối khai báo */
+    font-size: 28px; /* font-size */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-info p { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    line-height: 1.6; /* line-height */
+    margin-bottom: 20px; /* margin-bottom */
+    color: #333; /* color */
+} /* Kết thúc khối */
+
+.product-info ul { /* Bắt đầu khối khai báo */
+    list-style: none; /* list-style */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-info ul li { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    margin-bottom: 10px; /* margin-bottom */
+    padding-left: 20px; /* padding-left */
+    position: relative; /* position */
+} /* Kết thúc khối */
+
+.product-info ul li::before { /* Bắt đầu khối khai báo */
+    content: "\f00c"; /* content */
+    font-family: "Font Awesome 5 Free"; /* font-family */
+    font-weight: 900; /* font-weight */
+    color: #ff9900; /* color */
+    position: absolute; /* position */
+    left: 0; /* left */
+    top: 2px; /* top */
+} /* Kết thúc khối */
+
+.product-price { /* Bắt đầu khối khai báo */
+    font-size: 24px; /* font-size */
+    font-weight: bold; /* font-weight */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.button-group { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    gap: 10px; /* gap */
+    flex-wrap: wrap; /* flex-wrap */
+} /* Kết thúc khối */
+
+.cta-button { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+    text-align: center; /* text-align */
+    cursor: pointer; /* cursor */
+    transition: transform 0.1s, background-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.cta-button:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.cta-button:active { /* Bắt đầu khối khai báo */
+    transform: scale(0.95); /* transform */
+} /* Kết thúc khối */
+
+.add-to-cart { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+    text-align: center; /* text-align */
+    cursor: pointer; /* cursor */
+    transition: transform 0.1s, background-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.add-to-cart:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.add-to-cart:active { /* Bắt đầu khối khai báo */
+    transform: scale(0.95); /* transform */
+} /* Kết thúc khối */
+
+.product-content5 { /* Bắt đầu khối khai báo */
+    margin-top: 80px; /* margin-top */
+    padding: 20px; /* padding */
+    max-width: 1200px; /* max-width */
+    margin-left: auto; /* margin-left */
+    margin-right: auto; /* margin-right */
+} /* Kết thúc khối */
+
+.product-header5 { /* Bắt đầu khối khai báo */
+    text-align: center; /* text-align */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-header5 h1 { /* Bắt đầu khối khai báo */
+    font-size: 36px; /* font-size */
+    color: #de6d10; /* color */
+    margin-bottom: 10px; /* margin-bottom */
+    animation: fadeIn 1s ease-in; /* animation */
+} /* Kết thúc khối */
+
+.product-header p { /* Bắt đầu khối khai báo */
+    font-size: 18px; /* font-size */
+    color: #666; /* color */
+} /* Kết thúc khối */
+
+.product-details { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    flex-wrap: wrap; /* flex-wrap */
+    gap: 20px; /* gap */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-image { /* Bắt đầu khối khai báo */
+    flex: 1; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.product-image img { /* Bắt đầu khối khai báo */
+    width: 100%; /* width */
+    border-radius: 10px; /* border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box-shadow */
+} /* Kết thúc khối */
+
+.product-info { /* Bắt đầu khối khai báo */
+    flex: 2; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.product-info h2 { /* Bắt đầu khối khai báo */
+    font-size: 28px; /* font-size */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-info p { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    line-height: 1.6; /* line-height */
+    margin-bottom: 20px; /* margin-bottom */
+    color: #333; /* color */
+} /* Kết thúc khối */
+
+.product-info ul { /* Bắt đầu khối khai báo */
+    list-style: none; /* list-style */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-info ul li { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    margin-bottom: 10px; /* margin-bottom */
+    padding-left: 20px; /* padding-left */
+    position: relative; /* position */
+} /* Kết thúc khối */
+
+.product-info ul li::before { /* Bắt đầu khối khai báo */
+    content: "\f00c"; /* content */
+    font-family: "Font Awesome 5 Free"; /* font-family */
+    font-weight: 900; /* font-weight */
+    color: #ff9900; /* color */
+    position: absolute; /* position */
+    left: 0; /* left */
+    top: 2px; /* top */
+} /* Kết thúc khối */
+
+.product-price { /* Bắt đầu khối khai báo */
+    font-size: 24px; /* font-size */
+    font-weight: bold; /* font-weight */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.button-group { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    gap: 10px; /* gap */
+    flex-wrap: wrap; /* flex-wrap */
+} /* Kết thúc khối */
+
+.cta-button { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+    text-align: center; /* text-align */
+    cursor: pointer; /* cursor */
+    transition: transform 0.1s, background-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.cta-button:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.cta-button:active { /* Bắt đầu khối khai báo */
+    transform: scale(0.95); /* transform */
+} /* Kết thúc khối */
+
+.add-to-cart { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+    text-align: center; /* text-align */
+    cursor: pointer; /* cursor */
+    transition: transform 0.1s, background-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.add-to-cart:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.add-to-cart:active { /* Bắt đầu khối khai báo */
+    transform: scale(0.95); /* transform */
+} /* Kết thúc khối */
+
+
+.product-content6 { /* Bắt đầu khối khai báo */
+    margin-top: 80px; /* margin-top */
+    padding: 20px; /* padding */
+    max-width: 1200px; /* max-width */
+    margin-left: auto; /* margin-left */
+    margin-right: auto; /* margin-right */
+} /* Kết thúc khối */
+
+.product-header6 { /* Bắt đầu khối khai báo */
+    text-align: center; /* text-align */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-header6 h1 { /* Bắt đầu khối khai báo */
+    font-size: 36px; /* font-size */
+    color: #c65b19; /* color */
+    margin-bottom: 10px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-header p { /* Bắt đầu khối khai báo */
+    font-size: 18px; /* font-size */
+    color: #666; /* color */
+    animation: fadeIn 1s ease-in; /* animation */
+} /* Kết thúc khối */
+
+.product-details { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    flex-wrap: wrap; /* flex-wrap */
+    gap: 20px; /* gap */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-image { /* Bắt đầu khối khai báo */
+    flex: 1; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.product-image img { /* Bắt đầu khối khai báo */
+    width: 100%; /* width */
+    border-radius: 10px; /* border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box-shadow */
+} /* Kết thúc khối */
+
+.product-info { /* Bắt đầu khối khai báo */
+    flex: 2; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.product-info h2 { /* Bắt đầu khối khai báo */
+    font-size: 28px; /* font-size */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-info p { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    line-height: 1.6; /* line-height */
+    margin-bottom: 20px; /* margin-bottom */
+    color: #333; /* color */
+} /* Kết thúc khối */
+
+.product-info ul { /* Bắt đầu khối khai báo */
+    list-style: none; /* list-style */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-info ul li { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    margin-bottom: 10px; /* margin-bottom */
+    padding-left: 20px; /* padding-left */
+    position: relative; /* position */
+} /* Kết thúc khối */
+
+.product-info ul li::before { /* Bắt đầu khối khai báo */
+    content: "\f00c"; /* content */
+    font-family: "Font Awesome 5 Free"; /* font-family */
+    font-weight: 900; /* font-weight */
+    color: #ff9900; /* color */
+    position: absolute; /* position */
+    left: 0; /* left */
+    top: 2px; /* top */
+} /* Kết thúc khối */
+
+.product-price { /* Bắt đầu khối khai báo */
+    font-size: 24px; /* font-size */
+    font-weight: bold; /* font-weight */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.button-group { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    gap: 10px; /* gap */
+    flex-wrap: wrap; /* flex-wrap */
+} /* Kết thúc khối */
+
+.cta-button { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+    text-align: center; /* text-align */
+    cursor: pointer; /* cursor */
+    transition: transform 0.1s, background-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.cta-button:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.cta-button:active { /* Bắt đầu khối khai báo */
+    transform: scale(0.95); /* transform */
+} /* Kết thúc khối */
+
+.add-to-cart { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+    text-align: center; /* text-align */
+    cursor: pointer; /* cursor */
+    transition: transform 0.1s, background-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.add-to-cart:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.add-to-cart:active { /* Bắt đầu khối khai báo */
+    transform: scale(0.95); /* transform */
+} /* Kết thúc khối */
+
+
+.product-content7 { /* Bắt đầu khối khai báo */
+    margin-top: 80px; /* margin-top */
+    padding: 20px; /* padding */
+    max-width: 1200px; /* max-width */
+    margin-left: auto; /* margin-left */
+    margin-right: auto; /* margin-right */
+} /* Kết thúc khối */
+
+.product-header7 { /* Bắt đầu khối khai báo */
+    text-align: center; /* text-align */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-header7 h1 { /* Bắt đầu khối khai báo */
+    font-size: 36px; /* font-size */
+    color: #da7019; /* color */
+    margin-bottom: 10px; /* margin-bottom */
+    animation: fadeIn 1s ease-in; /* animation */
+} /* Kết thúc khối */
+
+.product-header p { /* Bắt đầu khối khai báo */
+    font-size: 18px; /* font-size */
+    color: #666; /* color */
+} /* Kết thúc khối */
+
+.product-details { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    flex-wrap: wrap; /* flex-wrap */
+    gap: 20px; /* gap */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-image { /* Bắt đầu khối khai báo */
+    flex: 1; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.product-image img { /* Bắt đầu khối khai báo */
+    width: 100%; /* width */
+    border-radius: 10px; /* border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box-shadow */
+} /* Kết thúc khối */
+
+.product-info { /* Bắt đầu khối khai báo */
+    flex: 2; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.product-info h2 { /* Bắt đầu khối khai báo */
+    font-size: 28px; /* font-size */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-info p { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    line-height: 1.6; /* line-height */
+    margin-bottom: 20px; /* margin-bottom */
+    color: #333; /* color */
+} /* Kết thúc khối */
+
+.product-info ul { /* Bắt đầu khối khai báo */
+    list-style: none; /* list-style */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-info ul li { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    margin-bottom: 10px; /* margin-bottom */
+    padding-left: 20px; /* padding-left */
+    position: relative; /* position */
+} /* Kết thúc khối */
+
+.product-info ul li::before { /* Bắt đầu khối khai báo */
+    content: "\f00c"; /* content */
+    font-family: "Font Awesome 5 Free"; /* font-family */
+    font-weight: 900; /* font-weight */
+    color: #ff9900; /* color */
+    position: absolute; /* position */
+    left: 0; /* left */
+    top: 2px; /* top */
+} /* Kết thúc khối */
+
+.product-price { /* Bắt đầu khối khai báo */
+    font-size: 24px; /* font-size */
+    font-weight: bold; /* font-weight */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.button-group { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    gap: 10px; /* gap */
+    flex-wrap: wrap; /* flex-wrap */
+} /* Kết thúc khối */
+
+.cta-button { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+    text-align: center; /* text-align */
+    cursor: pointer; /* cursor */
+    transition: transform 0.1s, background-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.cta-button:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.cta-button:active { /* Bắt đầu khối khai báo */
+    transform: scale(0.95); /* transform */
+} /* Kết thúc khối */
+
+.add-to-cart { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+    text-align: center; /* text-align */
+    cursor: pointer; /* cursor */
+    transition: transform 0.1s, background-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.add-to-cart:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.add-to-cart:active { /* Bắt đầu khối khai báo */
+    transform: scale(0.95); /* transform */
+} /* Kết thúc khối */
+
+.product-content8 { /* Bắt đầu khối khai báo */
+    margin-top: 80px; /* margin-top */
+    padding: 20px; /* padding */
+    max-width: 1200px; /* max-width */
+    margin-left: auto; /* margin-left */
+    margin-right: auto; /* margin-right */
+} /* Kết thúc khối */
+
+.product-header8 { /* Bắt đầu khối khai báo */
+    text-align: center; /* text-align */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-header8 h1 { /* Bắt đầu khối khai báo */
+    font-size: 36px; /* font-size */
+    color: #de6b19; /* color */
+    margin-bottom: 10px; /* margin-bottom */
+    animation: fadeIn 1s ease-in; /* animation */
+} /* Kết thúc khối */
+
+.product-header p { /* Bắt đầu khối khai báo */
+    font-size: 18px; /* font-size */
+    color: #666; /* color */
+} /* Kết thúc khối */
+
+.product-details { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    flex-wrap: wrap; /* flex-wrap */
+    gap: 20px; /* gap */
+    margin-bottom: 40px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-image { /* Bắt đầu khối khai báo */
+    flex: 1; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.product-image img { /* Bắt đầu khối khai báo */
+    width: 100%; /* width */
+    border-radius: 10px; /* border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box-shadow */
+} /* Kết thúc khối */
+
+.product-info { /* Bắt đầu khối khai báo */
+    flex: 2; /* flex */
+    min-width: 300px; /* min-width */
+} /* Kết thúc khối */
+
+.product-info h2 { /* Bắt đầu khối khai báo */
+    font-size: 28px; /* font-size */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-info p { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    line-height: 1.6; /* line-height */
+    margin-bottom: 20px; /* margin-bottom */
+    color: #333; /* color */
+} /* Kết thúc khối */
+
+.product-info ul { /* Bắt đầu khối khai báo */
+    list-style: none; /* list-style */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.product-info ul li { /* Bắt đầu khối khai báo */
+    font-size: 16px; /* font-size */
+    margin-bottom: 10px; /* margin-bottom */
+    padding-left: 20px; /* padding-left */
+    position: relative; /* position */
+} /* Kết thúc khối */
+
+.product-info ul li::before { /* Bắt đầu khối khai báo */
+    content: "\f00c"; /* content */
+    font-family: "Font Awesome 5 Free"; /* font-family */
+    font-weight: 900; /* font-weight */
+    color: #ff9900; /* color */
+    position: absolute; /* position */
+    left: 0; /* left */
+    top: 2px; /* top */
+} /* Kết thúc khối */
+
+.product-price { /* Bắt đầu khối khai báo */
+    font-size: 24px; /* font-size */
+    font-weight: bold; /* font-weight */
+    color: #232f3e; /* color */
+    margin-bottom: 20px; /* margin-bottom */
+} /* Kết thúc khối */
+
+.button-group { /* Bắt đầu khối khai báo */
+    display: flex; /* display */
+    gap: 10px; /* gap */
+    flex-wrap: wrap; /* flex-wrap */
+} /* Kết thúc khối */
+
+.cta-button { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+    text-align: center; /* text-align */
+    cursor: pointer; /* cursor */
+    transition: transform 0.1s, background-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.cta-button:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.cta-button:active { /* Bắt đầu khối khai báo */
+    transform: scale(0.95); /* transform */
+} /* Kết thúc khối */
+
+.add-to-cart { /* Bắt đầu khối khai báo */
+    display: inline-block; /* display */
+    padding: 12px 30px; /* padding */
+    background-color: #ff9900; /* background-color */
+    color: #fff; /* color */
+    text-decoration: none; /* text-decoration */
+    border-radius: 5px; /* border-radius */
+    font-size: 16px; /* font-size */
+    text-align: center; /* text-align */
+    cursor: pointer; /* cursor */
+    transition: transform 0.1s, background-color 0.3s; /* transition */
+} /* Kết thúc khối */
+
+.add-to-cart:hover { /* Bắt đầu khối khai báo */
+    background-color: #e68a00; /* background-color */
+} /* Kết thúc khối */
+
+.add-to-cart:active { /* Bắt đầu khối khai báo */
+    transform: scale(0.95); /* transform */
+} /* Kết thúc khối */
+
+.footer { /* Bắt đầu khối khai báo */
+    background-color: #232f3e; /* background-color */
+    color: #fff; /* color */
+    text-align: center; /* text-align */
+    padding: 20px 0; /* padding */
+    margin-top: 40px; /* margin-top */
+} /* Kết thúc khối */
