@@ -150,10 +150,11 @@
             actionsDiv.className = 'cart-actions';
             actionsDiv.innerHTML = `
                 <a href="product.html">Tiếp tục mua sắm</a>
-                <a href="checkout.html">Thanh toán</a>
+                <a id="thanhtoan"" >Thanh toán</a>
             `;
             cartContent.appendChild(actionsDiv);
         });
+         
 
         // Cập nhật số lượng
         function updateQuantity(index, change) {
@@ -185,6 +186,19 @@
             localStorage.removeItem('currentUser');
             window.location.reload();
         }
+   document.getElementById('thanhtoan').addEventListener('click', (e) => {
+                e.preventDefault();
+                if (!localStorage.getItem('isLoggedIn')) {
+                    alert("Bạn cần đăng nhập trước khi mua hàng");
+                    window.location.href = 'loginPage.html';
+                } else if (cart.length === 0) {
+                    alert("Giỏ hàng của bạn đang trống!");
+                } else {
+                    window.location.href = 'checkout.html';
+                }
+            });
+        
+       
     </script>
 </body>
 </html>

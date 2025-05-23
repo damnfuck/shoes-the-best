@@ -63,7 +63,6 @@
         </div>
     </section>
     <script>
-        // Kiểm tra trạng thái đăng nhập khi tải trang
         document.addEventListener('DOMContentLoaded', () => {
             const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
             const loginLink = document.getElementById('loginLink');
@@ -80,8 +79,6 @@
                 logoutLink.style.display = 'none';
             }
         });
-
-        // Hàm đăng xuất
         function logout() {
             localStorage.removeItem('isLoggedIn');
             localStorage.removeItem('currentUser');

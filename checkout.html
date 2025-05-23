@@ -189,7 +189,6 @@
                 logoutLink.style.display = 'none';
             }
 
-            // Hiển thị tóm tắt đơn hàng
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             const orderContent = document.getElementById('order-content');
             if (cart.length === 0) {

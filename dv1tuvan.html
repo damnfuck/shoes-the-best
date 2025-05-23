@@ -95,7 +95,6 @@
     
 </body>
 <script>
-        // Kiểm tra trạng thái đăng nhập khi tải trang
         document.addEventListener('DOMContentLoaded', () => {
             const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
             const loginLink = document.getElementById('loginLink');
@@ -120,4 +119,5 @@
             window.location.reload(); // Tải lại trang để cập nhật giao diện
         }
     </script>
+
 </html>
