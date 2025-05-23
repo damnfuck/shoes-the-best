@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập & Đăng Ký - Shoes Best</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #e8f0fe;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .form-container {
+            padding: 40px;
+            transition: all 0.5s ease;
+        }
+
+        .sign-in-form, .sign-up-form {
+            display: block;
+        }
+
+        .sign-up-form {
+            display: none;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #dc8b27;
+            font-size: 24px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            background: #f1f5f9;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            transition: all 0.3s ease;
+        }
+
+        .input-group:hover {
+            border-color: #f9a230;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #fff;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus {
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #fdbb38;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #ff9e29;
+        }
+
+        .switch {
+            text-align: center;
+            margin-top: 20px;
+            color: #4b5563;
+        }
+
+        .switch a {
+            color: #f59c37;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .switch a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+            margin-bottom: 15px;
+            display: none;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                margin: 20px;
+            }
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Form Đăng Nhập -->
+        <div class="form-container sign-in-form" id="signInForm">
+            <form id="loginForm">
+                <h2>Đăng Nhập</h2>
+                <p class="error" id="loginError">Tên đăng nhập hoặc mật khẩu không đúng!</p>
+                <div class="input-group">
+                    <input type="text" placeholder="Tên đăng nhập" id="loginUsername" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Mật khẩu" id="loginPassword" required>
+                </div>
+                <button type="submit">Đăng Nhập</button>
+                <div class="switch">
+                    Chưa có tài khoản? <a href="#" id="toSignUp">Đăng ký ngay</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Form Đăng Ký -->
+        <div class="form-container sign-up-form" id="signUpForm">
+            <form id="registerForm">
+                <h2>Đăng Ký</h2>
+                <p class="error" id="registerError">Tên đăng nhập đã tồn tại!</p>
+                <div class="input-group">
+                    <input type="text" placeholder="Họ và tên" id="fullName" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Tên đăng nhập" id="registerUsername" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Mật khẩu" id="registerPassword" required>
+                </div>
+                <button type="submit">Đăng Ký</button>
+                <div class="switch">
+                    Đã có tài khoản? <a href="#" id="toSignIn">Đăng nhập ngay</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const toSignUp = document.getElementById('toSignUp');
+        const toSignIn = document.getElementById('toSignIn');
+        const signInForm = document.getElementById('signInForm');
+        const signUpForm = document.getElementById('signUpForm');
+
+        if (window.location.hash === '#signUp') {
+            signInForm.style.display = 'none';
+            signUpForm.style.display = 'block';
+        }
+
+        toSignUp.addEventListener('click', (e) => {
+            e.preventDefault();
+            signInForm.style.display = 'none';
+            signUpForm.style.display = 'block';
+            document.getElementById('loginError').style.display = 'none';
+        });
+
+        toSignIn.addEventListener('click', (e) => {
+            e.preventDefault();
+            signUpForm.style.display = 'none';
+            signInForm.style.display = 'block';
+            document.getElementById('registerError').style.display = 'none';
+        });
+
+        const registerForm = document.getElementById('registerForm');
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const fullName = document.getElementById('fullName').value;
+            const username = document.getElementById('registerUsername').value;
+            const password = document.getElementById('registerPassword').value;
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const userExists = users.some(user => user.username === username);
+
+            if (userExists) {
+                document.getElementById('registerError').style.display = 'block';
+                return;
+            }
+
+            users.push({ fullName, username, password });
+            localStorage.setItem('users', JSON.stringify(users));
+            alert('Đăng ký thành công! Vui lòng đăng nhập.');
+            
+            signUpForm.style.display = 'none';
+            signInForm.style.display = 'block';
+            registerForm.reset();
+            document.getElementById('registerError').style.display = 'none';
+        });
+
+        const loginForm = document.getElementById('loginForm');
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const user = users.find(user => user.username === username && user.password === password);
+
+            if (user) {
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                alert(`Đăng nhập thành công! Chào ${user.fullName}`);
+                loginForm.reset();
+                document.getElementById('loginError').style.display = 'none';
+                window.location.href = 'index.html';
+            } else {
+                document.getElementById('loginError').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

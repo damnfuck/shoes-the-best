@@ -24,8 +24,10 @@
                   <li class="nav-link"><a href="product.html">Sản Phẩm</a></li>
                   <li class="nav-link"><a href="new.html">Tin Tức</a></li>
                   <li class="nav-link"><a href="contact.html">Liên Hệ</a></li>
-                  <li class="nav-link auth-link"><a href="#">Đăng nhập</a></li>
-                  <li class="nav-link auth-link"><a href="#">Đăng ký</a></li>
+                        <li class="nav-link"><a href="cart.html">Giỏ hàng</a></li>
+                 <li class="nav-link auth-link" id="loginLink"><a href="loginPage.html">Đăng nhập</a></li>
+                    <li class="nav-link auth-link" id="registerLink"><a href="loginPage.html#signUp">Đăng ký</a></li>
+                    <li class="nav-link" id="logoutLink" style="display: none;"><a href="#" onclick="logout()">Đăng xuất</a></li>
               </ul>
           <nav>
       </div>
@@ -126,4 +128,30 @@
  </footer>
 
 </body>
+ <script>
+        // Kiểm tra trạng thái đăng nhập khi tải trang
+        document.addEventListener('DOMContentLoaded', () => {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const loginLink = document.getElementById('loginLink');
+            const registerLink = document.getElementById('registerLink');
+            const logoutLink = document.getElementById('logoutLink');
+
+            if (isLoggedIn) {
+                loginLink.style.display = 'none';
+                registerLink.style.display = 'none';
+                logoutLink.style.display = 'block';
+            } else {
+                loginLink.style.display = 'block';
+                registerLink.style.display = 'block';
+                logoutLink.style.display = 'none';
+            }
+        });
+
+        // Hàm đăng xuất
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('currentUser');
+            window.location.reload(); // Tải lại trang để cập nhật giao diện
+        }
+    </script>
 </html>

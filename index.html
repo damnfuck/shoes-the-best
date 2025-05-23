@@ -24,13 +24,14 @@
                     <li class="nav-link"><a href="product.html">Sản Phẩm</a></li>
                     <li class="nav-link"><a href="new.html">Tin Tức</a></li>
                     <li class="nav-link"><a href="contact.html">Liên Hệ</a></li>
-                    <li class="nav-link auth-link"><a href="#">Đăng nhập</a></li>
-                    <li class="nav-link auth-link"><a href="#">Đăng ký</a></li>
+                    <li class="nav-link"><a href="cart.html">Giỏ hàng</a></li>
+                    <li class="nav-link auth-link" id="loginLink"><a href="loginPage.html">Đăng nhập</a></li>
+                    <li class="nav-link auth-link" id="registerLink"><a href="loginPage.html#signUp">Đăng ký</a></li>
+                    <li class="nav-link" id="logoutLink" style="display: none;"><a href="#" onclick="logout()">Đăng xuất</a></li>
                 </ul>
-            <nav>
+            </nav>
         </div>
     </header>
-
 
     <!-- banner -->
     <section class="hero">
@@ -50,21 +51,21 @@
         </div>
     </section>
 
-    <!-- Khách Hàng Đánh Giá  -->
+    <!-- Khách Hàng Đánh Giá -->
     <section class="testimonials">
         <div class="container">
             <h2>Sự Quan Tâm Của Khách Hàng</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-item">
-                    <p> “Mình rất hài lòng với đôi sneaker vừa mua. Màu sắc đẹp, đi cực êm, giao hàng cũng nhanh nữa. Sẽ tiếp tục ủng hộ!”</p>
-                    <h4> Nguyễn Minh Anh</h4>
+                    <p>“Mình rất hài lòng với đôi sneaker vừa mua. Màu sắc đẹp, đi cực êm, giao hàng cũng nhanh nữa. Sẽ tiếp tục ủng hộ!”</p>
+                    <h4>Nguyễn Minh Anh</h4>
                 </div>
                 <div class="testimonial-item">
-                    <p>  “Đặt đôi boots online mà nhận hàng ngoài sức mong đợi. Đúng form, đúng chất lượng. Nhân viên tư vấn cũng rất nhiệt tình.”</p>
-                    <h4> Trần Thái Hưng</h4>
+                    <p>“Đặt đôi boots online mà nhận hàng ngoài sức mong đợi. Đúng form, đúng chất lượng. Nhân viên tư vấn cũng rất nhiệt tình.”</p>
+                    <h4>Trần Thái Hưng</h4>
                 </div>
                 <div class="testimonial-item">
-                    <p>“Dịch vụ chăm sóc khách hàng quá tuyệt vời. Có lỗi nhỏ nhưng được xử lý rất nhanh chóng. Rất chuyên nghiệp!"</p>
+                    <p>“Dịch vụ chăm sóc khách hàng quá tuyệt vời. Có lỗi nhỏ nhưng được xử lý rất nhanh chóng. Rất chuyên nghiệp!”</p>
                     <h4>Nguyễn Thị Lan Hương</h4>
                 </div>
             </div>            
@@ -72,13 +73,13 @@
     </section>
 
     <!-- footer -->
-     <footer class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-info">
                     <h3>Thông Tin Liên Hệ</h3>
                     <p>371 Nguyễn Kiệm, TP. Hồ Chí Minh</p>
-                    <p>Email: <a href="maito:shoesbest@gmail.com">shoesbest@gmail.com</a></p>
+                    <p>Email: <a href="mailto:shoesbest@gmail.com">shoesbest@gmail.com</a></p>
                     <p>Hotline: 0903 123 456</p>
                 </div>
                 <div class="footer-links">
@@ -100,10 +101,33 @@
             <p class="footer-copy">© 2025 shoesbest. All rights reserved.</p>
             <a href="#top" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
         </div>
-     </footer>
+    </footer>
 
+    <script>
+        // Kiểm tra trạng thái đăng nhập khi tải trang
+        document.addEventListener('DOMContentLoaded', () => {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const loginLink = document.getElementById('loginLink');
+            const registerLink = document.getElementById('registerLink');
+            const logoutLink = document.getElementById('logoutLink');
 
+            if (isLoggedIn) {
+                loginLink.style.display = 'none';
+                registerLink.style.display = 'none';
+                logoutLink.style.display = 'block';
+            } else {
+                loginLink.style.display = 'block';
+                registerLink.style.display = 'block';
+                logoutLink.style.display = 'none';
+            }
+        });
 
-
+        // Hàm đăng xuất
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('currentUser');
+            window.location.reload(); // Tải lại trang để cập nhật giao diện
+        }
+    </script>
 </body>
 </html>

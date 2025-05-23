@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Giày đẹp là chưa đủ, phải êm chân và bền bỉ mỗi ngày.">
-    <meta name="keywords" content="Giày thể thao, giày đẹp, giày bền">
+    <meta name="description" content="Sản phẩm giày tại Shoes Best">
+    <meta name="keywords" content="giày, sneaker, thời trang">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>SHOES BEST - Sản Phẩm</title>
-
 </head>
 <body id="top">
     <header class="navbar">
@@ -34,18 +33,27 @@
         </div>
     </header>
 
-    <section class="products-section">
-        <h1>Sản Phẩm Giày Thể Thao</h1>
-        <nav id="product-nav">
-            <ul>
-                <li data-brand="all" class="active">Tất cả</li>
-                <li data-brand="Nike">Nike</li>
-                <li data-brand="Converse">Converse</li>
-                <li data-brand="Basic">Basic</li>
-            </ul>
-        </nav>
-        <div class="products-grid" id="products-grid">
-            <!-- Sản phẩm sẽ được đổ động bằng JavaScript -->
+    <section class="product-content1">
+        <div class="product-header1">
+            <h1 id="product-name"></h1>
+            <p id="product-subtitle"></p>
+        </div>
+
+        <div class="product-details">
+            <div class="product-image">
+                <img id="product-image" alt="Product Image">
+            </div>
+            <div class="product-info">
+                <h2 id="product-title"></h2>
+                <div id="product-description"></div>
+                <ul id="product-features"></ul>
+                <p class="product-price" id="product-price"></p>
+                <div class="button-group">
+                    <a class="cta-button" id="buy-now">Mua ngay</a>
+                    <a class="cta-button" id="add-to-cart">Thêm vào giỏ hàng</a>
+                    <a class="cta-button" href="product.html"> Quay lại</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -98,53 +106,66 @@
                 logoutLink.style.display = 'none';
             }
 
-            // Hàm hiển thị sản phẩm
-            function displayProducts(brand = 'all') {
-                const productsGrid = document.getElementById('products-grid');
-                productsGrid.innerHTML = ''; // Xóa danh sách hiện tại
-                const filteredProducts = brand === 'all' 
-                    ? products 
-                    : products.filter(product => product.brand === brand);
-                
-                filteredProducts.forEach(product => {
-                    const productCard = document.createElement('div');
-                    productCard.className = 'product-card';
-                    productCard.innerHTML = `
-                        <img src="${product.image}" alt="${product.name}">
-                        <div class="content">
-                            <h3>${product.name}</h3>
-                            <p class="price">${product.price}</p>
-                            <a href="product-detail.html?id=${product.id}" class="card-link">Xem Chi Tiết</a>
-                        </div>
-                    `;
-                    productsGrid.appendChild(productCard);
+            // Lấy ID sản phẩm từ URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = parseInt(urlParams.get('id')) || 1;
+
+            // Tìm sản phẩm
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                // Cập nhật nội dung
+                document.getElementById('product-name').textContent = product.name;
+                document.getElementById('product-subtitle').textContent = product.subtitle;
+                document.getElementById('product-title').textContent = product.title;
+                document.getElementById('product-image').src = product.image;
+                document.getElementById('product-image').alt = product.name;
+                document.getElementById('product-price').textContent = product.price;
+
+                // Cập nhật mô tả
+                const descriptionDiv = document.getElementById('product-description');
+                product.description.forEach(desc => {
+                    const p = document.createElement('p');
+                    p.textContent = desc;
+                    descriptionDiv.appendChild(p);
                 });
-            }
 
-            // Hiển thị tất cả sản phẩm ban đầu
-            displayProducts();
-
-            // Xử lý lọc theo hãng
-            const navItems = document.querySelectorAll('#product-nav li');
-            navItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    // Xóa lớp active khỏi tất cả
-                    navItems.forEach(nav => nav.classList.remove('active'));
-                    // Thêm lớp active cho mục được nhấn
-                    item.classList.add('active');
-                    // Lọc sản phẩm theo hãng
-                    const brand = item.getAttribute('data-brand');
-                    displayProducts(brand);
+                // Cập nhật tính năng
+                const featuresUl = document.getElementById('product-features');
+                product.features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.textContent = feature;
+                    featuresUl.appendChild(li);
                 });
-            });
 
-            // Hàm đăng xuất
-            function logout() {
-                localStorage.removeItem('isLoggedIn');
-                localStorage.removeItem('currentUser');
-                window.location.reload();
+                // Cập nhật link nút
+                document.getElementById('buy-now').href = `checkout.html?product=${product.id}`;
+                document.getElementById('add-to-cart').href = '#';
+
+                // Thêm vào giỏ hàng
+                document.getElementById('add-to-cart').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    const existingItem = cart.find(item => item.id === product.id);
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({ ...product, quantity: 1 });
+                    }
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    alert('Đã thêm vào giỏ hàng!');
+                    // window.location.href = 'cart.html'; // Đã comment để không tự động chuyển hướng
+                });
+            } else {
+                document.querySelector('.product-content1').innerHTML = '<p>Sản phẩm không tồn tại!</p>';
             }
         });
+
+        // Đăng xuất
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('currentUser');
+            window.location.reload();
+        }
     </script>
 </body>
 </html>

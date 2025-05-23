@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Giỏ hàng của bạn tại Shoes Best">
+    <meta name="keywords" content="giỏ hàng, giày, sneaker">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>SHOES BEST - Giỏ Hàng</title>
+   
+</head>
+<body id="top">
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">SHOES BEST</a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-link"><a href="index.html">Trang Chủ</a></li> 
+                    <li class="nav-link"><a href="about.html">Giới Thiệu</a></li>
+                    <li class="nav-link"><a href="services.html">Dịch Vụ</a></li>
+                    <li class="nav-link"><a href="product.html">Sản Phẩm</a></li>
+                    <li class="nav-link"><a href="new.html">Tin Tức</a></li>
+                    <li class="nav-link"><a href="contact.html">Liên Hệ</a></li>
+                    <li class="nav-link"><a href="cart.html"> Giỏ Hàng</a></li>
+                    <li class="nav-link auth-link" id="loginLink"><a href="loginPage.html">Đăng nhập</a></li>
+                    <li class="nav-link auth-link" id="registerLink"><a href="loginPage.html#signUp">Đăng ký</a></li>
+                    <li class="nav-link" id="logoutLink" style="display: none;"><a href="#" onclick="logout()">Đăng xuất</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="cart-section">
+        <div class="cart-container">
+            <h1>Giỏ Hàng Của Bạn</h1>
+            <div id="cart-content"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3>Thông Tin Liên Hệ</h3>
+                    <p>371 Nguyễn Kiệm, TP. Hồ Chí Minh</p>
+                    <p>Email: <a href="mailto:shoesbest@gmail.com">shoesbest@gmail.com</a></p>
+                    <p>Hotline: 0903 123 456</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Liên Kết Nhanh</h3>
+                    <ul>
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="about.html">Giới Thiệu</a></li>
+                        <li><a href="services.html">Dịch Vụ</a></li>
+                        <li><a href="contact.html">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Kết Nối Với Chúng Tôi</h3>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <p class="footer-copy">© 2025 shoesbest. All rights reserved.</p>
+            <a href="#top" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Kiểm tra trạng thái đăng nhập
+        document.addEventListener('DOMContentLoaded', () => {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const loginLink = document.getElementById('loginLink');
+            const registerLink = document.getElementById('registerLink');
+            const logoutLink = document.getElementById('logoutLink');
+
+            if (isLoggedIn) {
+                loginLink.style.display = 'none';
+                registerLink.style.display = 'none';
+                logoutLink.style.display = 'block';
+            } else {
+                loginLink.style.display = 'block';
+                registerLink.style.display = 'block';
+                logoutLink.style.display = 'none';
+            }
+
+            // Hiển thị giỏ hàng
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContent = document.getElementById('cart-content');
+            if (cart.length === 0) {
+                cartContent.innerHTML = '<p class="empty-cart">Giỏ hàng của bạn đang trống!</p>';
+                return;
+            }
+
+            let total = 0;
+            const table = document.createElement('table');
+            table.className = 'cart-table';
+            table.innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Sản Phẩm</th>
+                        <th>Giá</th>
+                        <th>Số Lượng</th>
+                        <th>Tổng</th>
+                        <th>Xóa</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+            `;
+            cartContent.appendChild(table);
+
+            const cartItems = document.getElementById('cart-items');
+            cart.forEach((item, index) => {
+                const itemTotal = parseFloat(item.price.replace(/[^\d]/g, '')) * item.quantity;
+                total += itemTotal;
+                const tr = document.createElement('tr');
+                tr.className = 'cart-item';
+                tr.innerHTML = `
+                    <td data-label="Sản Phẩm">
+                        <img src="${item.image}" alt="${item.name}">
+                        <span>${item.name}</span>
+                    </td>
+                    <td data-label="Giá">${item.price}</td>
+                    <td data-label="Số Lượng">
+                        <div class="quantity-control">
+                            <button onclick="updateQuantity(${index}, -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="updateQuantity(${index}, 1)">+</button>
+                        </div>
+                    </td>
+                    <td data-label="Tổng">${formatPrice(itemTotal)}</td>
+                    <td data-label="Xóa">
+                        <span class="remove-btn" onclick="removeItem(${index})">Xóa</span>
+                    </td>
+                `;
+                cartItems.appendChild(tr);
+            });
+
+            const totalDiv = document.createElement('div');
+            totalDiv.className = 'cart-total';
+            totalDiv.innerHTML = `Tổng cộng: ${formatPrice(total)}`;
+            cartContent.appendChild(totalDiv);
+
+            const actionsDiv = document.createElement('div');
+            actionsDiv.className = 'cart-actions';
+            actionsDiv.innerHTML = `
+                <a href="product.html">Tiếp tục mua sắm</a>
+                <a href="checkout.html">Thanh toán</a>
+            `;
+            cartContent.appendChild(actionsDiv);
+        });
+
+        // Cập nhật số lượng
+        function updateQuantity(index, change) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart[index].quantity += change;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.reload();
+        }
+
+        // Xóa sản phẩm
+        function removeItem(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.reload();
+        }
+
+        // Định dạng giá
+        function formatPrice(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' VND';
+        }
+
+        // Đăng xuất
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('currentUser');
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>

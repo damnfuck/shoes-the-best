@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thanh toán đơn hàng tại Shoes Best">
+    <meta name="keywords" content="thanh toán, giày, sneaker">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>SHOES BEST - Thanh Toán</title>
+    <style>
+        .checkout-section {
+            padding: 50px 20px;
+        }
+        .checkout-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 30px;
+            margin-top: 60px;
+        }
+        .checkout-form, .order-summary {
+            flex: 1;
+        }
+        .checkout-form h2, .order-summary h2 {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .order-summary table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .order-summary th, .order-summary td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        .order-total {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: right;
+            margin: 20px 0;
+        }
+        .checkout-btn {
+            display: block;
+            background: #fdbb38;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .checkout-btn:hover {
+            background: #ff9e29;
+        }
+        .empty-cart {
+            text-align: center;
+            padding: 50px;
+        }
+        @media (max-width: 768px) {
+            .checkout-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body id="top">
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">SHOES BEST</a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-link"><a href="index.html">Trang Chủ</a></li> 
+                    <li class="nav-link"><a href="about.html">Giới Thiệu</a></li>
+                    <li class="nav-link"><a href="services.html">Dịch Vụ</a></li>
+                    <li class="nav-link"><a href="product.html">Sản Phẩm</a></li>
+                    <li class="nav-link"><a href="new.html">Tin Tức</a></li>
+                    <li class="nav-link"><a href="contact.html">Liên Hệ</a></li>
+                          <li class="nav-link"><a href="cart.html">Giỏ hàng</a></li>
+                    <li class="nav-link auth-link" id="loginLink"><a href="loginPage.html">Đăng nhập</a></li>
+                    <li class="nav-link auth-link" id="registerLink"><a href="loginPage.html#signUp">Đăng ký</a></li>
+                    <li class="nav-link" id="logoutLink" style="display: none;"><a href="#" onclick="logout()">Đăng xuất</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="checkout-section">
+        <div class="checkout-container">
+            <div class="checkout-form">
+                <h2>Thông Tin Giao Hàng</h2>
+                <form id="checkout-form">
+                    <div class="form-group">
+                        <label for="fullName">Họ và Tên</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số Điện Thoại</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Địa Chỉ</label>
+                        <input type="text" id="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment">Phương Thức Thanh Toán</label>
+                        <select id="payment" required>
+                            <option value="cod">Thanh toán khi nhận hàng</option>
+                            <option value="bank">Chuyển khoản ngân hàng</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="checkout-btn">Đặt Hàng</button>
+                </form>
+            </div>
+            <div class="order-summary">
+                <h2>Tóm Tắt Đơn Hàng</h2>
+                <div id="order-content"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3>Thông Tin Liên Hệ</h3>
+                    <p>371 Nguyễn Kiệm, TP. Hồ Chí Minh</p>
+                    <p>Email: <a href="mailto:shoesbest@gmail.com">shoesbest@gmail.com</a></p>
+                    <p>Hotline: 0903 123 456</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Liên Kết Nhanh</h3>
+                    <ul>
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="about.html">Giới Thiệu</a></li>
+                        <li><a href="services.html">Dịch Vụ</a></li>
+                        <li><a href="contact.html">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Kết Nối Với Chúng Tôi</h3>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <p class="footer-copy">© 2025 shoesbest. All rights reserved.</p>
+            <a href="#top" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Kiểm tra trạng thái đăng nhập
+        document.addEventListener('DOMContentLoaded', () => {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const loginLink = document.getElementById('loginLink');
+            const registerLink = document.getElementById('registerLink');
+            const logoutLink = document.getElementById('logoutLink');
+
+            if (isLoggedIn) {
+                loginLink.style.display = 'none';
+                registerLink.style.display = 'none';
+                logoutLink.style.display = 'block';
+            } else {
+                loginLink.style.display = 'block';
+                registerLink.style.display = 'block';
+                logoutLink.style.display = 'none';
+            }
+
+            // Hiển thị tóm tắt đơn hàng
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const orderContent = document.getElementById('order-content');
+            if (cart.length === 0) {
+                orderContent.innerHTML = '<p class="empty-cart">Giỏ hàng của bạn đang trống!</p>';
+                document.getElementById('checkout-form').style.display = 'none';
+                return;
+            }
+
+            let total = 0;
+            const table = document.createElement('table');
+            table.innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Sản Phẩm</th>
+                        <th>Số Lượng</th>
+                        <th>Giá</th>
+                    </tr>
+                </thead>
+                <tbody id="order-items"></tbody>
+            `;
+            orderContent.appendChild(table);
+
+            const orderItems = document.getElementById('order-items');
+            cart.forEach(item => {
+                const itemTotal = parseFloat(item.price.replace(/[^\d]/g, '')) * item.quantity;
+                total += itemTotal;
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.quantity}</td>
+                    <td>${formatPrice(itemTotal)}</td>
+                `;
+                orderItems.appendChild(tr);
+            });
+
+            const totalDiv = document.createElement('div');
+            totalDiv.className = 'order-total';
+            totalDiv.innerHTML = `Tổng cộng: ${formatPrice(total)}`;
+            orderContent.appendChild(totalDiv);
+
+            // Xử lý đặt hàng
+            document.getElementById('checkout-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const order = {
+                    fullName: document.getElementById('fullName').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    address: document.getElementById('address').value,
+                    payment: document.getElementById('payment').value,
+                    items: cart,
+                    total: total,
+                    date: new Date().toISOString()
+                };
+                // Lưu đơn hàng vào localStorage (giả lập)
+                const orders = JSON.parse(localStorage.getItem('orders')) || [];
+                orders.push(order);
+                localStorage.setItem('orders', JSON.stringify(orders));
+                // Xóa giỏ hàng
+                localStorage.removeItem('cart');
+                alert('Đặt hàng thành công! Cảm ơn bạn đã mua sắm tại Shoes Best.');
+                window.location.href = 'index.html';
+            });
+        });
+
+        // Định dạng giá
+        function formatPrice(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' VND';
+        }
+
+        // Đăng xuất
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('currentUser');
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>
