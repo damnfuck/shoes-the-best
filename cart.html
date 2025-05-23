@@ -9,7 +9,100 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>SHOES BEST - Giỏ Hàng</title>
-   
+    <style>
+        .cart-section {
+            padding: 50px 20px;
+        }
+        .cart-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .cart-table th, .cart-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-table th {
+            background: #f5f5f5;
+        }
+        .cart-item img {
+            width: 80px;
+            height: auto;
+        }
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .quantity-control button {
+            background: #fdbb38;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .quantity-control button:hover {
+            background: #ff9e29;
+        }
+        .remove-btn {
+            color: red;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .cart-total {
+            text-align: right;
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .cart-actions {
+            text-align: right;
+        }
+        .cart-actions a {
+            background: #fdbb38;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        .cart-actions a:hover {
+            background: #ff9e29;
+        }
+        .empty-cart {
+            text-align: center;
+            padding: 50px;
+        }
+        @media (max-width: 768px) {
+            .cart-table {
+                display: block;
+            }
+            .cart-table thead {
+                display: none;
+            }
+            .cart-table tr {
+                display: block;
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                padding: 10px;
+            }
+            .cart-table td {
+                display: block;
+                text-align: right;
+                padding: 10px;
+            }
+            .cart-table td:before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+            }
+        }
+    </style>
 </head>
 <body id="top">
     <header class="navbar">
@@ -25,7 +118,7 @@
                     <li class="nav-link"><a href="product.html">Sản Phẩm</a></li>
                     <li class="nav-link"><a href="new.html">Tin Tức</a></li>
                     <li class="nav-link"><a href="contact.html">Liên Hệ</a></li>
-                    <li class="nav-link"><a href="cart.html"> Giỏ Hàng</a></li>
+                    <li class="nav-link"><a href="cart.html"><i class="fas fa-shopping-cart"></i> Giỏ Hàng</a></li>
                     <li class="nav-link auth-link" id="loginLink"><a href="loginPage.html">Đăng nhập</a></li>
                     <li class="nav-link auth-link" id="registerLink"><a href="loginPage.html#signUp">Đăng ký</a></li>
                     <li class="nav-link" id="logoutLink" style="display: none;"><a href="#" onclick="logout()">Đăng xuất</a></li>
@@ -94,6 +187,14 @@
             const cartContent = document.getElementById('cart-content');
             if (cart.length === 0) {
                 cartContent.innerHTML = '<p class="empty-cart">Giỏ hàng của bạn đang trống!</p>';
+                // Tạo nút hành động ngay cả khi giỏ rỗng
+                const actionsDiv = document.createElement('div');
+                actionsDiv.className = 'cart-actions';
+                actionsDiv.innerHTML = `
+                    <a href="product.html">Quay lại</a>
+                    <a href="product.html">Tiếp tục mua sắm</a>
+                `;
+                cartContent.appendChild(actionsDiv);
                 return;
             }
 
@@ -149,12 +250,21 @@
             const actionsDiv = document.createElement('div');
             actionsDiv.className = 'cart-actions';
             actionsDiv.innerHTML = `
+                <a href="product.html">Quay lại</a>
                 <a href="product.html">Tiếp tục mua sắm</a>
-                <a id="thanhtoan"" >Thanh toán</a>
+                <a id="thanhtoan">Thanh toán</a>
             `;
             cartContent.appendChild(actionsDiv);
+
+            // Xử lý nút Thanh toán
+            const thanhtoanBtn = document.getElementById('thanhtoan');
+            if (thanhtoanBtn) {
+                thanhtoanBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.location.href = 'checkout.html';
+                });
+            }
         });
-         
 
         // Cập nhật số lượng
         function updateQuantity(index, change) {
@@ -186,19 +296,6 @@
             localStorage.removeItem('currentUser');
             window.location.reload();
         }
-   document.getElementById('thanhtoan').addEventListener('click', (e) => {
-                e.preventDefault();
-                if (!localStorage.getItem('isLoggedIn')) {
-                    alert("Bạn cần đăng nhập trước khi mua hàng");
-                    window.location.href = 'loginPage.html';
-                } else if (cart.length === 0) {
-                    alert("Giỏ hàng của bạn đang trống!");
-                } else {
-                    window.location.href = 'checkout.html';
-                }
-            });
-        
-       
     </script>
 </body>
 </html>

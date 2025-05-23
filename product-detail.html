@@ -24,7 +24,7 @@
                     <li class="nav-link"><a href="product.html">Sản Phẩm</a></li>
                     <li class="nav-link"><a href="new.html">Tin Tức</a></li>
                     <li class="nav-link"><a href="contact.html">Liên Hệ</a></li>
-                    <li class="nav-link"><a href="cart.html"> Giỏ Hàng</a></li>
+                    <li class="nav-link"><a href="cart.html"><i class="fas fa-shopping-cart"></i> Giỏ Hàng</a></li>
                     <li class="nav-link auth-link" id="loginLink"><a href="loginPage.html">Đăng nhập</a></li>
                     <li class="nav-link auth-link" id="registerLink"><a href="loginPage.html#signUp">Đăng ký</a></li>
                     <li class="nav-link" id="logoutLink" style="display: none;"><a href="#" onclick="logout()">Đăng xuất</a></li>
@@ -51,7 +51,7 @@
                 <div class="button-group">
                     <a class="cta-button" id="buy-now">Mua ngay</a>
                     <a class="cta-button" id="add-to-cart">Thêm vào giỏ hàng</a>
-                    <a class="cta-button" href="product.html"> Quay lại</a>
+                    <a class="cta-button" href="product.html">Quay lại</a>
                 </div>
             </div>
         </div>
@@ -137,24 +137,16 @@
                     featuresUl.appendChild(li);
                 });
 
-                // Cập nhật link nút
-                document.getElementById('buy-now').addEventListener('click',(e) => {
+                // Xử lý nút Mua ngay
+                document.getElementById('buy-now').addEventListener('click', (e) => {
                     e.preventDefault();
-                    if(isLoggedIn!=true)
-                {
+                    if (!localStorage.getItem('isLoggedIn')) {
                         alert("Bạn cần đăng nhập trước khi mua hàng");
                         window.location.href = 'loginPage.html';
-                
-                }
-                    else
-                    {
-                          document.getElementById('buy-now').href = `checkout.html?product=${product.id}`;
+                    } else {
+                        window.location.href = `checkout.html?product=${product.id}`;
                     }
-                    
-                })
-               
-                
-                document.getElementById('add-to-cart').href = '#';
+                });
 
                 // Thêm vào giỏ hàng
                 document.getElementById('add-to-cart').addEventListener('click', (e) => {
@@ -168,7 +160,7 @@
                     }
                     localStorage.setItem('cart', JSON.stringify(cart));
                     alert('Đã thêm vào giỏ hàng!');
-                    // window.location.href = 'cart.html'; // Đã comment để không tự động chuyển hướng
+                    // window.location.href = 'cart.html'; // Comment để không tự động chuyển hướng
                 });
             } else {
                 document.querySelector('.product-content1').innerHTML = '<p>Sản phẩm không tồn tại!</p>';
